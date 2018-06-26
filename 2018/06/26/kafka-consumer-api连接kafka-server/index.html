@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Java,Kafka," />
 
 
 
@@ -79,16 +79,18 @@
 
 
 
-<meta name="description" content="Java、通信、生活">
-<meta property="og:type" content="website">
-<meta property="og:title" content="zhangxingr&#39; blog">
-<meta property="og:url" content="https://zhangxingr.github.io/index.html">
+<meta name="description" content="背景 最近在公司老大要做一个kafka consumer接收kafka server的message，其实很简单的一个功能，用kafka都有些大材小用了，一般的JMS都可以了。 之前没有用过kafka，所以去简单了解了一下。  kafka的主要功能 发布和订阅消息（流），在这方面，它类似于一个消息队列或企业消息系统。 以容错的方式存储消息（流）。 在消息流发生时处理它们。  kafka核心API">
+<meta name="keywords" content="Java,Kafka">
+<meta property="og:type" content="article">
+<meta property="og:title" content="kafka consumer api连接kafka server">
+<meta property="og:url" content="https://zhangxingr.github.io/2018/06/26/kafka-consumer-api连接kafka-server/index.html">
 <meta property="og:site_name" content="zhangxingr&#39; blog">
-<meta property="og:description" content="Java、通信、生活">
+<meta property="og:description" content="背景 最近在公司老大要做一个kafka consumer接收kafka server的message，其实很简单的一个功能，用kafka都有些大材小用了，一般的JMS都可以了。 之前没有用过kafka，所以去简单了解了一下。  kafka的主要功能 发布和订阅消息（流），在这方面，它类似于一个消息队列或企业消息系统。 以容错的方式存储消息（流）。 在消息流发生时处理它们。  kafka核心API">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-06-26T13:51:49.553Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="zhangxingr&#39; blog">
-<meta name="twitter:description" content="Java、通信、生活">
+<meta name="twitter:title" content="kafka consumer api连接kafka server">
+<meta name="twitter:description" content="背景 最近在公司老大要做一个kafka consumer接收kafka server的message，其实很简单的一个功能，用kafka都有些大材小用了，一般的JMS都可以了。 之前没有用过kafka，所以去简单了解了一下。  kafka的主要功能 发布和订阅消息（流），在这方面，它类似于一个消息队列或企业消息系统。 以容错的方式存储消息（流）。 在消息流发生时处理它们。  kafka核心API">
 
 
 
@@ -118,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://zhangxingr.github.io/"/>
+  <link rel="canonical" href="https://zhangxingr.github.io/2018/06/26/kafka-consumer-api连接kafka-server/"/>
 
 
 
 
 
-  <title>zhangxingr' blog</title>
+  <title>kafka consumer api连接kafka server | zhangxingr' blog</title>
   
 
 
@@ -153,8 +155,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -305,202 +306,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zhangxingr.github.io/2018/06/26/Java通过HttpClient的请求封装/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhangxingrui">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zhangxingr' blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/26/Java通过HttpClient的请求封装/" itemprop="url">Java通过HttpClient的请求封装</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-26T21:32:42+08:00">
-                2018-06-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Kafka/" itemprop="url" rel="index">
-                    <span itemprop="name">Kafka</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/06/26/Java通过HttpClient的请求封装/" class="leancloud_visitors" data-flag-title="Java通过HttpClient的请求封装">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">热度&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-				 <span>℃</span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1,109
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  6
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>昨天在公司做项目的时候要在Java代码里面调用网管系统的Restful接口返回Json数据，然后简单的看了一下关于Java中发起Http或者Https请求的几种方式，总结一下。</p>
-<h1 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h1><blockquote>
-<p>目前JAVA实现HTTP请求的方法用的最多的有两种：一种是通过HTTPClient这种第三方的开源框架去实现。HTTPClient对HTTP的封装性比较不错，通过它基本上能够满足我们大部分的需求，HttpClient3.1 是 org.apache.commons.httpclient下操作远程 url的工具包，虽然已不再更新，但实现工作中使用httpClient3.1的代码还是很多，HttpClient4.5是org.apache.http.client下操作远程 url的工具包，最新的；另一种则是通过HttpURLConnection去实现，HttpURLConnection是JAVA的标准类，是JAVA比较原生的一种实现方式。 </p>
-</blockquote>
-<p>我采用的是org.apache.http.client这个包来做Http请求。然后最开始分别实现了Get，Post，Put，Delete增删改查四种请求方式，后来觉得不妥改成了一个通用的方法。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/06/26/Java通过HttpClient的请求封装/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
 
   
 
@@ -530,9 +338,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/26/kafka-consumer-api连接kafka-server/" itemprop="url">kafka consumer api连接kafka server</a></h1>
+          <h1 class="post-title" itemprop="name headline">kafka consumer api连接kafka server</h1>
         
 
         <div class="post-meta">
@@ -647,8 +453,7 @@
       
 
       
-        
-          <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><blockquote>
+        <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><blockquote>
 <p>最近在公司老大要做一个kafka consumer接收kafka server的message，其实很简单的一个功能，用kafka都有些大材小用了，一般的JMS都可以了。</p>
 <p>之前没有用过kafka，所以去简单了解了一下。</p>
 </blockquote>
@@ -663,14 +468,30 @@
 <li>流处理Streams API</li>
 <li>Connector API</li>
 </ul>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/06/26/kafka-consumer-api连接kafka-server/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+<a id="more"></a>
+<h1 id="基本术语"><a href="#基本术语" class="headerlink" title="基本术语"></a>基本术语</h1><blockquote>
+<h5 id="Topic"><a href="#Topic" class="headerlink" title="Topic"></a>Topic</h5><p>Kafka将消息种子(Feed)分门别类，每一类的消息称之为一个主题(Topic).</p>
+<h5 id="Producer"><a href="#Producer" class="headerlink" title="Producer"></a>Producer</h5><p>发布消息的对象称之为主题生产者(Kafka topic producer)</p>
+<h5 id="Consumer"><a href="#Consumer" class="headerlink" title="Consumer"></a>Consumer</h5><p>订阅消息并处理发布的消息的种子的对象称之为主题消费者(consumers)</p>
+<h5 id="Broker"><a href="#Broker" class="headerlink" title="Broker"></a>Broker</h5><p>已发布的消息保存在一组服务器中，称之为Kafka集群。集群中的每一个服务器都是一个代理(Broker). 消费者可以订阅一个或多个主题（topic），并从Broker拉数据，从而消费这些已发布的消息。</p>
+</blockquote>
+<h1 id="版本"><a href="#版本" class="headerlink" title="版本"></a>版本</h1><p>之前做的时候老大说用high level consumer API或者low level conxumer API来做，但是我在做的过程中发现对接的kafka（网管团队维护）版本是0.11的，在网上查阅了解到kafka0.9之后新增了一个Java消费者用于替换现在基于zookeeper（一个分布式的应用程序协调服务，如果有做过dubbo项目的同学应该很熟悉）的high or low level consumer API。</p>
+<h1 id="依赖包"><a href="#依赖包" class="headerlink" title="依赖包"></a>依赖包</h1><blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt; &lt;dependency&gt;</span><br><span class="line">&gt;       &lt;groupId&gt;org.apache.kafka&lt;/groupId&gt;</span><br><span class="line">&gt;       &lt;artifactId&gt;kafka-clients&lt;/artifactId&gt;</span><br><span class="line">&gt;       &lt;version&gt;0.10.1.0&lt;/version&gt;</span><br><span class="line">&gt; &lt;/dependency&gt;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h1 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h1><p>查看当前kafka所有的topic<br>./kafka-topics.sh –list –zookeeper localhost:2181/nokia/nsp/kafka</p>
+<p>producer发送message<br>./kafka-console-producer.sh –broker-list localhost:9092 –topic ns-eg-2cea2382-2f25-4524-80ec-31949dd37c0c</p>
+<p>consumer接受message<br>./kafka-console-consumer.sh –bootstrap-server localhost:9092 –topic ns-eg-2cea2382-2f25-4524-80ec-31949dd37c0c –from-beginning</p>
+<p>查看版本（kafka没有类似于java -version这样的命令）<br>find ./libs/ -name *kafka_* | head -1 | grep -o ‘\kafka[^\n]*’</p>
+<p>这个命令查找到类似于kafka_2.9.2-0.8.1.1.jar.asc 这样的jar包，然后这个jar包的名称前面的数据2.9.2是scala（kafka就是用scala开发的）的版本，后面的0.8.1.1就是所用的kafka的版本。</p>
+<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><p>因为我只使用到了kafka consumer API，所以这里列出consumer的代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Properties props = <span class="keyword">new</span> Properties();</span><br><span class="line">     props.put(<span class="string">"bootstrap.servers"</span>, <span class="string">"localhost:9092"</span>);</span><br><span class="line">     props.put(<span class="string">"group.id"</span>, <span class="string">"test"</span>);</span><br><span class="line">     props.put(<span class="string">"enable.auto.commit"</span>, <span class="string">"true"</span>);</span><br><span class="line">     props.put(<span class="string">"auto.commit.interval.ms"</span>, <span class="string">"1000"</span>);</span><br><span class="line">     props.put(<span class="string">"key.deserializer"</span>, <span class="string">"org.apache.kafka.common.serialization.StringDeserializer"</span>);</span><br><span class="line">     props.put(<span class="string">"value.deserializer"</span>, <span class="string">"org.apache.kafka.common.serialization.StringDeserializer"</span>);</span><br><span class="line">     KafkaConsumer&lt;String, String&gt; consumer = <span class="keyword">new</span> KafkaConsumer&lt;&gt;(props);</span><br><span class="line">     consumer.subscribe(Arrays.asList(<span class="string">"foo"</span>, <span class="string">"bar"</span>));</span><br><span class="line">     <span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span><br><span class="line">         ConsumerRecords&lt;String, String&gt; records = consumer.poll(<span class="number">100</span>);</span><br><span class="line">         <span class="keyword">for</span> (ConsumerRecord&lt;String, String&gt; record : records)</span><br><span class="line">             System.out.printf(<span class="string">"offset = %d, key = %s, value = %s%n"</span>, record.offset(), record.key(), record.value());</span><br><span class="line">     &#125;</span><br></pre></td></tr></table></figure>
+<p> 以上是自动提交偏移量（offset）的consumer client，消费者TCP长连接到Broker拉取message。关于偏移量的概念很重要，可参考下面提供的参考文章有详细叙述。</p>
+<h1 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h1><p><a href="kafka入门介绍">http://orchome.com/5</a>    kafka入门介绍</p>
+<p><a href="kafka消费者客户端">http://orchome.com/451</a>    kafka消费者客户端</p>
+<p><a href="kafka官网">http://kafka.apache.org/</a>     kafka官网</p>
+<p><a href="查看kafka版本">https://blog.csdn.net/Damonhaus/article/details/54310868</a> 查看kafka版本</p>
+
       
     </div>
     
@@ -685,205 +506,42 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zhangxingr.github.io/2017/02/28/关于Arrays.asList生成的list增删数据的问题/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhangxingrui">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zhangxingr' blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/02/28/关于Arrays.asList生成的list增删数据的问题/" itemprop="url">关于Arrays.asList生成的list增删数据的问题</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-28T13:03:44+08:00">
-                2017-02-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i> Java</a>
           
-
+            <a href="/tags/Kafka/" rel="tag"><i class="fa fa-tag"></i> Kafka</a>
           
-            
-          
-
-          
-          
-             <span id="/2017/02/28/关于Arrays.asList生成的list增删数据的问题/" class="leancloud_visitors" data-flag-title="关于Arrays.asList生成的list增删数据的问题">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">热度&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-				 <span>℃</span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  230
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          <h1 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Exception in thread <span class="string">"main"</span> java.lang.UnsupportedOperationException</span><br><span class="line">	at java.util.AbstractList.add(AbstractList.java:<span class="number">148</span>)</span><br><span class="line">	at com.design.test.Main.main(Main.java:<span class="number">15</span>)</span><br></pre></td></tr></table></figure>
-<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">       String[] array = <span class="keyword">new</span> String[]&#123;<span class="string">"1"</span>, <span class="string">"2"</span>&#125;;</span><br><span class="line">       List&lt;String&gt; list =  Arrays.asList(array);</span><br><span class="line">       list.add(<span class="number">0</span>, <span class="string">"0"</span>);</span><br><span class="line">       System.out.println(list);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-<h1 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h1><p>出现这个异常的原因是通过Arrays.asList转换数组生成的ArrayList和java.util.ArrayList不一样，它是定义在Arrays里面，和java.util.ArrayList都是继承并实现了AbstractList抽象类。 </p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/02/28/关于Arrays.asList生成的list增删数据的问题/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/02/28/关于Arrays.asList生成的list增删数据的问题/" rel="next" title="关于Arrays.asList生成的list增删数据的问题">
+                <i class="fa fa-chevron-left"></i> 关于Arrays.asList生成的list增删数据的问题
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
 
-    
+          <span class="post-nav-divider"></span>
 
-    
-
-    
-
-    <footer class="post-footer">
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/06/26/Java通过HttpClient的请求封装/" rel="prev" title="Java通过HttpClient的请求封装">
+                Java通过HttpClient的请求封装 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
 
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -893,10 +551,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -904,6 +563,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -924,8 +587,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -999,6 +671,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#kafka的主要功能"><span class="nav-number">2.</span> <span class="nav-text">kafka的主要功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#kafka核心API"><span class="nav-number">3.</span> <span class="nav-text">kafka核心API</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基本术语"><span class="nav-number">4.</span> <span class="nav-text">基本术语</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Topic"><span class="nav-number">4.0.0.0.1.</span> <span class="nav-text">Topic</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Producer"><span class="nav-number">4.0.0.0.2.</span> <span class="nav-text">Producer</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Consumer"><span class="nav-number">4.0.0.0.3.</span> <span class="nav-text">Consumer</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Broker"><span class="nav-number">4.0.0.0.4.</span> <span class="nav-text">Broker</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#版本"><span class="nav-number">5.</span> <span class="nav-text">版本</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#依赖包"><span class="nav-number">6.</span> <span class="nav-text">依赖包</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常用命令"><span class="nav-number">7.</span> <span class="nav-text">常用命令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用"><span class="nav-number">8.</span> <span class="nav-text">使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考文章"><span class="nav-number">9.</span> <span class="nav-text">参考文章</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1154,6 +842,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
