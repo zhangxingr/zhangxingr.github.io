@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Http,Java,Restful," />
+  <meta name="keywords" content="Java,Http,Restful," />
 
 
 
@@ -80,7 +80,7 @@
 
 
 <meta name="description" content="背景昨天在公司做项目的时候要在Java代码里面调用网管系统的Restful接口返回Json数据，然后简单的看了一下关于Java中发起Http或者Https请求的几种方式，总结一下。 方法 目前JAVA实现HTTP请求的方法用的最多的有两种：一种是通过HTTPClient这种第三方的开源框架去实现。HTTPClient对HTTP的封装性比较不错，通过它基本上能够满足我们大部分的需求，HttpClie">
-<meta name="keywords" content="Http,Java,Restful">
+<meta name="keywords" content="Java,Http,Restful">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java通过HttpClient的请求封装">
 <meta property="og:url" content="https://zhangxingr.github.io/2018/06/26/Java通过HttpClient的请求封装/index.html">
@@ -386,6 +386,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/06/26/Java通过HttpClient的请求封装/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/06/26/Java通过HttpClient的请求封装/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -487,9 +497,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Http/" rel="tag"><i class="fa fa-tag"></i> Http</a>
-          
             <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i> Java</a>
+          
+            <a href="/tags/Http/" rel="tag"><i class="fa fa-tag"></i> Http</a>
           
             <a href="/tags/Restful/" rel="tag"><i class="fa fa-tag"></i> Restful</a>
           
@@ -540,6 +550,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
 
   
 
@@ -857,6 +874,43 @@
 
 
 
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname, 
+            owner: 'zhangxingr',
+            repo: 'zhangxingr.github.io',
+            
+            lang: "zh-Hans" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: 'c714b7696b8e8c46d671bcc3538599c7e0e3c730',
+            
+                client_id: 'fbc2eec6ee9afc868c9a'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
+    
 
 
 
