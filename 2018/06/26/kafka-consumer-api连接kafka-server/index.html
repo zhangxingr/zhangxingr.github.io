@@ -79,18 +79,23 @@
 
 
 
-<meta name="description" content="背景 最近在公司老大要做一个kafka consumer接收kafka server的message，其实很简单的一个功能，用kafka都有些大材小用了，一般的JMS都可以了。 之前没有用过kafka，所以去简单了解了一下。  kafka的主要功能 发布和订阅消息（流），在这方面，它类似于一个消息队列或企业消息系统。 以容错的方式存储消息（流）。 在消息流发生时处理它们。  kafka核心API">
+<meta name="description" content="背景  最近在公司老大要做一个kafka consumer接收kafka server的message，其实很简单的一个功能，用kafka都有些大材小用了，一般的JMS都可以了。 之前没有用过kafka，所以去简单了解了一下。  kafka是什么东西？  Apache Kafka® is a distributed streaming platformkafka是一个分布式的流媒体平台  kafk">
 <meta name="keywords" content="Java,Kafka">
 <meta property="og:type" content="article">
 <meta property="og:title" content="kafka consumer api连接kafka server">
 <meta property="og:url" content="https://zhangxingr.github.io/2018/06/26/kafka-consumer-api连接kafka-server/index.html">
 <meta property="og:site_name" content="zhangxingr&#39; blog">
-<meta property="og:description" content="背景 最近在公司老大要做一个kafka consumer接收kafka server的message，其实很简单的一个功能，用kafka都有些大材小用了，一般的JMS都可以了。 之前没有用过kafka，所以去简单了解了一下。  kafka的主要功能 发布和订阅消息（流），在这方面，它类似于一个消息队列或企业消息系统。 以容错的方式存储消息（流）。 在消息流发生时处理它们。  kafka核心API">
+<meta property="og:description" content="背景  最近在公司老大要做一个kafka consumer接收kafka server的message，其实很简单的一个功能，用kafka都有些大材小用了，一般的JMS都可以了。 之前没有用过kafka，所以去简单了解了一下。  kafka是什么东西？  Apache Kafka® is a distributed streaming platformkafka是一个分布式的流媒体平台  kafk">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-04T16:04:34.168Z">
+<meta property="og:image" content="https://zhangxingr.github.io/uploads/pages/760273-20171108181426763-1692750478.png">
+<meta property="og:image" content="https://zhangxingr.github.io/uploads/pages/760273-20171108181503075-2011721824.png">
+<meta property="og:image" content="https://zhangxingr.github.io/uploads/pages/760273-20171108181730059-1009703405.png">
+<meta property="og:image" content="https://zhangxingr.github.io/uploads/pages/760273-20171108181923325-686894915.png">
+<meta property="og:updated_time" content="2018-07-11T09:01:40.793Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="kafka consumer api连接kafka server">
-<meta name="twitter:description" content="背景 最近在公司老大要做一个kafka consumer接收kafka server的message，其实很简单的一个功能，用kafka都有些大材小用了，一般的JMS都可以了。 之前没有用过kafka，所以去简单了解了一下。  kafka的主要功能 发布和订阅消息（流），在这方面，它类似于一个消息队列或企业消息系统。 以容错的方式存储消息（流）。 在消息流发生时处理它们。  kafka核心API">
+<meta name="twitter:description" content="背景  最近在公司老大要做一个kafka consumer接收kafka server的message，其实很简单的一个功能，用kafka都有些大材小用了，一般的JMS都可以了。 之前没有用过kafka，所以去简单了解了一下。  kafka是什么东西？  Apache Kafka® is a distributed streaming platformkafka是一个分布式的流媒体平台  kafk">
+<meta name="twitter:image" content="https://zhangxingr.github.io/uploads/pages/760273-20171108181426763-1692750478.png">
 
 
 
@@ -426,7 +431,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  813
+                  1,441
                 </span>
               
 
@@ -442,7 +447,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4
+                  6
                 </span>
               
             </div>
@@ -463,44 +468,121 @@
       
 
       
-        <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><blockquote>
+        <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p><br></p>
+<blockquote>
 <p>最近在公司老大要做一个kafka consumer接收kafka server的message，其实很简单的一个功能，用kafka都有些大材小用了，一般的JMS都可以了。</p>
 <p>之前没有用过kafka，所以去简单了解了一下。</p>
 </blockquote>
-<h1 id="kafka的主要功能"><a href="#kafka的主要功能" class="headerlink" title="kafka的主要功能"></a>kafka的主要功能</h1><ol>
-<li>发布和订阅消息（流），在这方面，它类似于一个消息队列或企业消息系统。</li>
+<h1 id="kafka是什么东西？"><a href="#kafka是什么东西？" class="headerlink" title="kafka是什么东西？"></a>kafka是什么东西？</h1><p><br></p>
+<blockquote>
+<h3 id="Apache-Kafka®-is-a-distributed-streaming-platform"><a href="#Apache-Kafka®-is-a-distributed-streaming-platform" class="headerlink" title="Apache Kafka® is a distributed streaming platform"></a>Apache Kafka® is <em>a distributed streaming platform</em></h3><p>kafka是一个分布式的流媒体平台</p>
+</blockquote>
+<h1 id="kafka的主要功能"><a href="#kafka的主要功能" class="headerlink" title="kafka的主要功能"></a>kafka的主要功能</h1><p><br></p>
+<ol>
+<li>发布和订阅消息（流），在这方面，它类似于一个消息队列或企业消息系统，所以kafka被归于消息队列框架。</li>
 <li>以<code>容错</code>的方式存储消息（流）。</li>
-<li>在消息流发生时处理它们。</li>
+<li>可以在消息发布的时候进行处理。</li>
 </ol>
-<h1 id="kafka核心API"><a href="#kafka核心API" class="headerlink" title="kafka核心API"></a>kafka核心API</h1><ul>
+<h1 id="kafka核心API"><a href="#kafka核心API" class="headerlink" title="kafka核心API"></a>kafka核心API</h1><p><br></p>
+<ul>
 <li>生产者Producer API</li>
 <li>消费者Consumer API</li>
 <li>流处理Streams API</li>
 <li>Connector API</li>
 </ul>
 <a id="more"></a>
-<h1 id="基本术语"><a href="#基本术语" class="headerlink" title="基本术语"></a>基本术语</h1><blockquote>
+<h1 id="基本术语"><a href="#基本术语" class="headerlink" title="基本术语"></a>基本术语</h1><p><br></p>
+<blockquote>
 <h5 id="Topic"><a href="#Topic" class="headerlink" title="Topic"></a>Topic</h5><p>Kafka将消息种子(Feed)分门别类，每一类的消息称之为一个主题(Topic).</p>
 <h5 id="Producer"><a href="#Producer" class="headerlink" title="Producer"></a>Producer</h5><p>发布消息的对象称之为主题生产者(Kafka topic producer)</p>
 <h5 id="Consumer"><a href="#Consumer" class="headerlink" title="Consumer"></a>Consumer</h5><p>订阅消息并处理发布的消息的种子的对象称之为主题消费者(consumers)</p>
 <h5 id="Broker"><a href="#Broker" class="headerlink" title="Broker"></a>Broker</h5><p>已发布的消息保存在一组服务器中，称之为Kafka集群。集群中的每一个服务器都是一个代理(Broker). 消费者可以订阅一个或多个主题（topic），并从Broker拉数据，从而消费这些已发布的消息。</p>
 </blockquote>
-<h1 id="版本"><a href="#版本" class="headerlink" title="版本"></a>版本</h1><p>之前做的时候老大说用high level consumer API或者low level conxumer API来做，但是我在做的过程中发现对接的kafka（网管团队维护）版本是0.11的，在网上查阅了解到kafka0.9之后新增了一个Java消费者用于替换现在基于zookeeper（一个分布式的应用程序协调服务，如果有做过dubbo项目的同学应该很熟悉）的high or low level consumer API。</p>
-<h1 id="依赖包"><a href="#依赖包" class="headerlink" title="依赖包"></a>依赖包</h1><blockquote>
+<h1 id="详细介绍"><a href="#详细介绍" class="headerlink" title="详细介绍"></a>详细介绍</h1><p><br></p>
+<p><strong>Kafka目前主要作为一个分布式的发布订阅式的消息系统使用，下图展示了kafka的基本机制。</strong></p>
+<ol>
+<li><p><strong>kafka消息传输流程</strong></p>
+<p><img src="\uploads\pages\760273-20171108181426763-1692750478.png" alt=""></p>
+</li>
+</ol>
+<p>如上图所示，producer在向kafka cluster发送message之前，会先对message进行分类，也就是分成不同的topic，consumer在消费message的时候可以对指定的topic进行消费，只关心指定的topic。</p>
+<p>consumer与kafka cluster建立长连接，不断的从集群中拉去消息并进行处理。</p>
+<p><br></p>
+<ol start="2">
+<li><p><strong>kafka server消息存储策略</strong></p>
+<p><img src="\uploads\pages\760273-20171108181503075-2011721824.png" alt=""></p>
+</li>
+</ol>
+<blockquote>
+<p>​    谈到kafka的存储，就不得不提到分区，即partitions，创建一个topic时，同时可以指定分区数目，分区数越多，其吞吐量也越大，但是需要的资源也越多，同时也会导致更高的不可用性，kafka在接收到生产者发送的消息之后，会根据均衡策略将消息存储到不同的分区中。 </p>
+</blockquote>
+<p><br></p>
+<ol start="3">
+<li><p><strong>生产者</strong></p>
+<p><img src="\uploads\pages\760273-20171108181730059-1009703405.png" alt=""></p>
+</li>
+</ol>
+<p>producer在向kafka集群发送消息的时候有三种方式选择分区</p>
+<ul>
+<li>明确指定分区</li>
+<li>指定均衡策略</li>
+<li>不指定，则会采用随机的均衡策略</li>
+</ul>
+<p><br></p>
+<ol start="4">
+<li><p><strong>消费者</strong></p>
+<p><img src="\uploads\pages\760273-20171108181923325-686894915.png" alt=""></p>
+</li>
+</ol>
+<p>如上图所示，kafka中不同的消费者可以指定不同的group ID来同时消费同一个Topic下的消息。</p>
+<blockquote>
+<p>特别提醒：</p>
+<p>​    对于一个group而言，消费者的数量不应该多余分区的数量，因为在一个group中，每个分区至多只能绑定到一个消费者上，即一个消费者可以消费多个分区，一个分区只能给一个消费者消费</p>
+<p>​    因此，若一个group中的消费者数量大于分区数量的话，多余的消费者将不会收到任何消息。</p>
+</blockquote>
+<ol start="5">
+<li><strong>相较于其他消息队列系统的优势</strong><ul>
+<li>高吞吐，在一台普通的服务器上既可以达到10W/s的吞吐速率；</li>
+<li>完全的分布式系统，Broker、Producer、Consumer都原生自动支持分布式，自动实现负载均衡；</li>
+<li>支持Hadoop数据并行加载，对于像Hadoop的一样的日志数据和离线分析系统，但又要求实时处理的限制，这是一个可行的解决方案。Kafka通过Hadoop的并行加载机制统一了在线和离线的消息处理。</li>
+<li>快速持久化，可以在O(1)的系统开销下进行消息持久化；</li>
+</ul>
+</li>
+</ol>
+<h1 id="版本"><a href="#版本" class="headerlink" title="版本"></a>版本</h1><p><br></p>
+<p>之前做的时候老大说用high level consumer API或者low level conxumer API来做，但是我在做的过程中发现对接的kafka（网管团队维护）版本是0.11的，在网上查阅了解到kafka0.9之后新增了一个Java消费者用于替换现在基于zookeeper（一个分布式的应用程序协调服务，如果有做过dubbo项目的同学应该很熟悉）的high or low level consumer API。</p>
+<h1 id="依赖包"><a href="#依赖包" class="headerlink" title="依赖包"></a>依赖包</h1><p><br></p>
+<blockquote>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt; &lt;dependency&gt;</span><br><span class="line">&gt;       &lt;groupId&gt;org.apache.kafka&lt;/groupId&gt;</span><br><span class="line">&gt;       &lt;artifactId&gt;kafka-clients&lt;/artifactId&gt;</span><br><span class="line">&gt;       &lt;version&gt;0.10.1.0&lt;/version&gt;</span><br><span class="line">&gt; &lt;/dependency&gt;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
 </blockquote>
-<h1 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h1><p>查看当前kafka所有的topic<br>./kafka-topics.sh –list –zookeeper localhost:2181/nokia/nsp/kafka</p>
-<p>producer发送message<br>./kafka-console-producer.sh –broker-list localhost:9092 –topic ns-eg-2cea2382-2f25-4524-80ec-31949dd37c0c</p>
-<p>consumer接受message<br>./kafka-console-consumer.sh –bootstrap-server localhost:9092 –topic ns-eg-2cea2382-2f25-4524-80ec-31949dd37c0c –from-beginning</p>
-<p>查看版本（kafka没有类似于java -version这样的命令）<br>find ./libs/ -name *kafka_* | head -1 | grep -o ‘\kafka[^\n]*’</p>
+<h1 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h1><p><br></p>
+<p>查看当前kafka所有的topic</p>
+<blockquote>
+<p>./kafka-topics.sh –list –zookeeper localhost:2181/nokia/nsp/kafka</p>
+</blockquote>
+<p>producer发送message</p>
+<blockquote>
+<p>./kafka-console-producer.sh –broker-list localhost:9092 –topic ns-eg-155c683f-f87e-4fc6-850d-dbc47f7ff3f0</p>
+</blockquote>
+<p>consumer接受message</p>
+<blockquote>
+<p>./kafka-console-consumer.sh –bootstrap-server localhost:9092 –topic ns-eg-fefb2353-b213-41b6-aa21-186c0a3734ea –from-beginning</p>
+</blockquote>
+<p>查看版本（kafka没有类似于java -version这样的命令）</p>
+<blockquote>
+<p>find ./libs/ -name *kafka_* | head -1 | grep -o ‘\kafka[^\n]*’</p>
+</blockquote>
 <p>这个命令查找到类似于kafka_2.9.2-0.8.1.1.jar.asc 这样的jar包，然后这个jar包的名称前面的数据2.9.2是scala（kafka就是用scala开发的）的版本，后面的0.8.1.1就是所用的kafka的版本。</p>
-<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><p>因为我只使用到了kafka consumer API，所以这里列出consumer的代码</p>
+<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><p><br></p>
+<p>因为我只使用到了kafka consumer API，所以这里列出consumer的代码</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Properties props = <span class="keyword">new</span> Properties();</span><br><span class="line">     props.put(<span class="string">"bootstrap.servers"</span>, <span class="string">"localhost:9092"</span>);</span><br><span class="line">     props.put(<span class="string">"group.id"</span>, <span class="string">"test"</span>);</span><br><span class="line">     props.put(<span class="string">"enable.auto.commit"</span>, <span class="string">"true"</span>);</span><br><span class="line">     props.put(<span class="string">"auto.commit.interval.ms"</span>, <span class="string">"1000"</span>);</span><br><span class="line">     props.put(<span class="string">"key.deserializer"</span>, <span class="string">"org.apache.kafka.common.serialization.StringDeserializer"</span>);</span><br><span class="line">     props.put(<span class="string">"value.deserializer"</span>, <span class="string">"org.apache.kafka.common.serialization.StringDeserializer"</span>);</span><br><span class="line">     KafkaConsumer&lt;String, String&gt; consumer = <span class="keyword">new</span> KafkaConsumer&lt;&gt;(props);</span><br><span class="line">     consumer.subscribe(Arrays.asList(<span class="string">"foo"</span>, <span class="string">"bar"</span>));</span><br><span class="line">     <span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span><br><span class="line">         ConsumerRecords&lt;String, String&gt; records = consumer.poll(<span class="number">100</span>);</span><br><span class="line">         <span class="keyword">for</span> (ConsumerRecord&lt;String, String&gt; record : records)</span><br><span class="line">             System.out.printf(<span class="string">"offset = %d, key = %s, value = %s%n"</span>, record.offset(), record.key(), record.value());</span><br><span class="line">     &#125;</span><br></pre></td></tr></table></figure>
 <p> 以上是自动提交偏移量（offset）的consumer client，消费者TCP长连接到Broker拉取message。关于偏移量的概念很重要，可参考下面提供的参考文章有详细叙述。</p>
-<h1 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h1><p><a href="kafka入门介绍">http://orchome.com/5</a>    kafka入门介绍</p>
-<p><a href="kafka消费者客户端">http://orchome.com/451</a>    kafka消费者客户端</p>
-<p><a href="kafka官网">http://kafka.apache.org/</a>     kafka官网</p>
-<p><a href="查看kafka版本">https://blog.csdn.net/Damonhaus/article/details/54310868</a> 查看kafka版本</p>
+<h1 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h1><p><br></p>
+<p><a href="http://orchome.com/5" target="_blank" rel="noopener">kafka入门介绍</a></p>
+<p><a href="http://orchome.com/451" target="_blank" rel="noopener">kafka消费者客户端</a></p>
+<p><a href="http://kafka.apache.org/" target="_blank" rel="noopener">kafka官网</a></p>
+<p><a href="https://blog.csdn.net/Damonhaus/article/details/54310868" target="_blank" rel="noopener">查看kafka版本</a></p>
+<p><a href="https://www.cnblogs.com/hei12138/p/7805475.html" target="_blank" rel="noopener">kafka实战</a></p>
 
       
     </div>
@@ -727,7 +809,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#kafka的主要功能"><span class="nav-number">2.</span> <span class="nav-text">kafka的主要功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#kafka核心API"><span class="nav-number">3.</span> <span class="nav-text">kafka核心API</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基本术语"><span class="nav-number">4.</span> <span class="nav-text">基本术语</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Topic"><span class="nav-number">4.0.0.0.1.</span> <span class="nav-text">Topic</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Producer"><span class="nav-number">4.0.0.0.2.</span> <span class="nav-text">Producer</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Consumer"><span class="nav-number">4.0.0.0.3.</span> <span class="nav-text">Consumer</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Broker"><span class="nav-number">4.0.0.0.4.</span> <span class="nav-text">Broker</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#版本"><span class="nav-number">5.</span> <span class="nav-text">版本</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#依赖包"><span class="nav-number">6.</span> <span class="nav-text">依赖包</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常用命令"><span class="nav-number">7.</span> <span class="nav-text">常用命令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用"><span class="nav-number">8.</span> <span class="nav-text">使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考文章"><span class="nav-number">9.</span> <span class="nav-text">参考文章</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#kafka是什么东西？"><span class="nav-number">2.</span> <span class="nav-text">kafka是什么东西？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Apache-Kafka®-is-a-distributed-streaming-platform"><span class="nav-number">2.0.1.</span> <span class="nav-text">Apache Kafka® is a distributed streaming platform</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#kafka的主要功能"><span class="nav-number">3.</span> <span class="nav-text">kafka的主要功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#kafka核心API"><span class="nav-number">4.</span> <span class="nav-text">kafka核心API</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基本术语"><span class="nav-number">5.</span> <span class="nav-text">基本术语</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Topic"><span class="nav-number">5.0.0.0.1.</span> <span class="nav-text">Topic</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Producer"><span class="nav-number">5.0.0.0.2.</span> <span class="nav-text">Producer</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Consumer"><span class="nav-number">5.0.0.0.3.</span> <span class="nav-text">Consumer</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Broker"><span class="nav-number">5.0.0.0.4.</span> <span class="nav-text">Broker</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#详细介绍"><span class="nav-number">6.</span> <span class="nav-text">详细介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#版本"><span class="nav-number">7.</span> <span class="nav-text">版本</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#依赖包"><span class="nav-number">8.</span> <span class="nav-text">依赖包</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常用命令"><span class="nav-number">9.</span> <span class="nav-text">常用命令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用"><span class="nav-number">10.</span> <span class="nav-text">使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考文章"><span class="nav-number">11.</span> <span class="nav-text">参考文章</span></a></li></ol></div>
             
 
           </div>
