@@ -91,7 +91,7 @@
 <meta property="og:image" content="https://zhangxingr.github.io/uploads/pages/760273-20171108181503075-2011721824.png">
 <meta property="og:image" content="https://zhangxingr.github.io/uploads/pages/760273-20171108181730059-1009703405.png">
 <meta property="og:image" content="https://zhangxingr.github.io/uploads/pages/760273-20171108181923325-686894915.png">
-<meta property="og:updated_time" content="2018-07-11T09:01:40.793Z">
+<meta property="og:updated_time" content="2018-07-17T07:41:09.293Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="kafka consumer api连接kafka server">
 <meta name="twitter:description" content="背景  最近在公司老大要做一个kafka consumer接收kafka server的message，其实很简单的一个功能，用kafka都有些大材小用了，一般的JMS都可以了。 之前没有用过kafka，所以去简单了解了一下。  kafka是什么东西？  Apache Kafka® is a distributed streaming platformkafka是一个分布式的流媒体平台  kafk">
@@ -511,11 +511,9 @@
 <ol start="2">
 <li><p><strong>kafka server消息存储策略</strong></p>
 <p><img src="\uploads\pages\760273-20171108181503075-2011721824.png" alt=""></p>
+<p> ​    谈到kafka的存储，就不得不提到分区，即partitions，创建一个topic时，同时可以指定分区数目，分区数越多，其吞吐量也越大，但是需要的资源也越多，同时也会导致更高的不可用性，kafka在接收到生产者发送的消息之后，会根据均衡策略将消息存储到不同的分区中。 </p>
 </li>
 </ol>
-<blockquote>
-<p>​    谈到kafka的存储，就不得不提到分区，即partitions，创建一个topic时，同时可以指定分区数目，分区数越多，其吞吐量也越大，但是需要的资源也越多，同时也会导致更高的不可用性，kafka在接收到生产者发送的消息之后，会根据均衡策略将消息存储到不同的分区中。 </p>
-</blockquote>
 <p><br></p>
 <ol start="3">
 <li><p><strong>生产者</strong></p>
@@ -744,7 +742,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

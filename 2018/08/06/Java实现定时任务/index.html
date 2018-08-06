@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="npm,NodeJs," />
+  <meta name="keywords" content="Java," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="npm install -g cnpm –registry=https://registry.npm.taobao.org">
-<meta name="keywords" content="npm,NodeJs">
+<meta name="description" content="为什么要用定时任务  项目中要在内存中实现一个数据缓存机制，然后要定期定时清理其中无效的数据，因为项目没用Spring框架不能集成Quartz（个人认为很好用的三方库），所以第一次系统的了解一下Java自带的一些函数来实现定时任务。  Java中定时任务有哪几种方式  单开一个线程一直运行，通过sleep达到定时效果 不太好用">
+<meta name="keywords" content="Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="npm install的时候卡住">
-<meta property="og:url" content="https://zhangxingr.github.io/2018/07/06/npm-install的时候卡住/index.html">
+<meta property="og:title" content="Java实现定时任务">
+<meta property="og:url" content="https://zhangxingr.github.io/2018/08/06/Java实现定时任务/index.html">
 <meta property="og:site_name" content="zhangxingr&#39; blog">
-<meta property="og:description" content="npm install -g cnpm –registry=https://registry.npm.taobao.org">
+<meta property="og:description" content="为什么要用定时任务  项目中要在内存中实现一个数据缓存机制，然后要定期定时清理其中无效的数据，因为项目没用Spring框架不能集成Quartz（个人认为很好用的三方库），所以第一次系统的了解一下Java自带的一些函数来实现定时任务。  Java中定时任务有哪几种方式  单开一个线程一直运行，通过sleep达到定时效果 不太好用">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-06T07:50:27.464Z">
+<meta property="og:updated_time" content="2018-08-06T08:53:17.698Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="npm install的时候卡住">
-<meta name="twitter:description" content="npm install -g cnpm –registry=https://registry.npm.taobao.org">
+<meta name="twitter:title" content="Java实现定时任务">
+<meta name="twitter:description" content="为什么要用定时任务  项目中要在内存中实现一个数据缓存机制，然后要定期定时清理其中无效的数据，因为项目没用Spring框架不能集成Quartz（个人认为很好用的三方库），所以第一次系统的了解一下Java自带的一些函数来实现定时任务。  Java中定时任务有哪几种方式  单开一个线程一直运行，通过sleep达到定时效果 不太好用">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://zhangxingr.github.io/2018/07/06/npm-install的时候卡住/"/>
+  <link rel="canonical" href="https://zhangxingr.github.io/2018/08/06/Java实现定时任务/"/>
 
 
 
 
 
-  <title>npm install的时候卡住 | zhangxingr' blog</title>
+  <title>Java实现定时任务 | zhangxingr' blog</title>
   
 
 
@@ -321,7 +321,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zhangxingr.github.io/2018/07/06/npm-install的时候卡住/">
+    <link itemprop="mainEntityOfPage" href="https://zhangxingr.github.io/2018/08/06/Java实现定时任务/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zhangxingrui">
@@ -338,7 +338,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">npm install的时候卡住</h1>
+          <h1 class="post-title" itemprop="name headline">Java实现定时任务</h1>
         
 
         <div class="post-meta">
@@ -350,8 +350,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-06T15:49:09+08:00">
-                2018-07-06
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-06T16:17:27+08:00">
+                2018-08-06
               </time>
             
 
@@ -373,8 +373,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/NodeJs/" itemprop="url" rel="index">
-                    <span itemprop="name">NodeJs</span>
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
                   </a>
                 </span>
 
@@ -391,8 +391,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/07/06/npm-install的时候卡住/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/07/06/npm-install的时候卡住/" itemprop="commentsCount"></span>
+                <a href="/2018/08/06/Java实现定时任务/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/08/06/Java实现定时任务/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -400,7 +400,7 @@
 
           
           
-             <span id="/2018/07/06/npm-install的时候卡住/" class="leancloud_visitors" data-flag-title="npm install的时候卡住">
+             <span id="/2018/08/06/Java实现定时任务/" class="leancloud_visitors" data-flag-title="Java实现定时任务">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -426,7 +426,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  10
+                  599
                 </span>
               
 
@@ -442,7 +442,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  3
                 </span>
               
             </div>
@@ -463,9 +463,41 @@
       
 
       
-        <blockquote>
-<p>npm install -g cnpm –registry=<a href="https://registry.npm.taobao.org/" target="_blank" rel="noopener">https://registry.npm.taobao.org</a> </p>
+        <h1 id="为什么要用定时任务"><a href="#为什么要用定时任务" class="headerlink" title="为什么要用定时任务"></a>为什么要用定时任务</h1><p><br></p>
+<blockquote>
+<p>项目中要在内存中实现一个数据缓存机制，然后要定期定时清理其中无效的数据，因为项目没用Spring框架不能集成Quartz（个人认为很好用的三方库），所以第一次系统的了解一下Java自带的一些函数来实现定时任务。</p>
 </blockquote>
+<h1 id="Java中定时任务有哪几种方式"><a href="#Java中定时任务有哪几种方式" class="headerlink" title="Java中定时任务有哪几种方式"></a>Java中定时任务有哪几种方式</h1><p><br></p>
+<ol>
+<li><p>单开一个线程一直运行，通过sleep达到定时效果</p>
+<p><strong>不太好用</strong></p>
+<a id="more"></a>
+</li>
+<li><p>用Timer和TimerTask (<strong>jdk1.3之后使用</strong>)</p>
+<p>优势：</p>
+<ul>
+<li>当启动和去取消任务时可以控制 </li>
+<li>第一次执行任务时可以指定你想要的delay时间 </li>
+</ul>
+</li>
+<li><p>ScheduledExecutorService (<strong>jdk5后使用，非常适合并发使用</strong>)</p>
+<p>优势：</p>
+<ul>
+<li>相比于Timer的单线程，它是通过线程池的方式来执行任务的 </li>
+<li>可以很灵活的去设定第一次执行任务delay时间 </li>
+<li>提供了良好的约定，以便设定执行的时间间隔 </li>
+</ul>
+</li>
+</ol>
+<h1 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h1><p><br></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ScheduledExecutorService execService = Executors</span><br><span class="line">                .newScheduledThreadPool( 2 );</span><br><span class="line"></span><br><span class="line">        String time = &quot;2018-08-06 00:00:00&quot;</span><br><span class="line"></span><br><span class="line">        execService.scheduleAtFixedRate( new CacheTask(),</span><br><span class="line">            getInitialDelay( time ), getDayMillis( 1 ), TimeUnit.MILLISECONDS );</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">// 将具体时间转换为毫秒</span><br><span class="line">private static long getInitialDelay( String time )</span><br><span class="line">    &#123;</span><br><span class="line">        Date specifiedDate = getTimeMillis( time );</span><br><span class="line">        if( specifiedDate.before( new Date() ) )</span><br><span class="line">        &#123;</span><br><span class="line">            Calendar calendar = Calendar.getInstance();</span><br><span class="line">            calendar.setTime( specifiedDate );</span><br><span class="line">            calendar.add( Calendar.DAY_OF_MONTH, 1 );</span><br><span class="line">            return calendar.getTime().getTime() - 		System.currentTimeMillis();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        return specifiedDate.getTime() - System.currentTimeMillis();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    private static Date getTimeMillis( String time )</span><br><span class="line">    &#123;</span><br><span class="line">        try</span><br><span class="line">        &#123;</span><br><span class="line">            DateFormat dateFormat = new SimpleDateFormat( &quot;yy-MM-dd HH:mm:ss&quot; );</span><br><span class="line">            DateFormat dayFormat = new SimpleDateFormat( &quot;yy-MM-dd&quot; );</span><br><span class="line">            return dateFormat</span><br><span class="line">                    .parse( dayFormat.format( new Date() ) + &quot; &quot; + time );</span><br><span class="line">        &#125;</span><br><span class="line">        catch( ParseException e )</span><br><span class="line">        &#123;</span><br><span class="line">            logger.error( &quot;getTimeMillis failed&quot; );</span><br><span class="line">        &#125;</span><br><span class="line">        return new Date();</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 将时间间隔转换为毫秒</span><br><span class="line">private static long getDayMillis( int num )</span><br><span class="line">    &#123;</span><br><span class="line">        return num * 24 * 60 * 60 * 1000;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h1 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h1><p><br></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">execService.scheduleAtFixedRate( new CacheTask(),</span><br><span class="line">    getInitialDelay( time ), getDayMillis( 1 ), TimeUnit.MILLISECONDS );</span><br></pre></td></tr></table></figure>
+<p>这段代码的参数从前往后依次是：到时间了要执行的程序（单独一个线程），设置开始时间，时间间隔，单位。</p>
+<p>然后还要注意scheduleAtFixedRate方法和scheduleWithFixedDelay 方法的区别：</p>
+<p>scheduleAtFixedRate是每次定时任务执行的时间都是固定间隔，而scheduleWithFixedDelay 则是收到每次执行的线程时间的影响，意思就是下一次定时任务的执行开始时间是上一次任务的结束时间+指定的时间间隔，这样就会存在延时，程序执行时间不确定的问题。</p>
 
       
     </div>
@@ -512,9 +544,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/npm/" rel="tag"><i class="fa fa-tag"></i> npm</a>
-          
-            <a href="/tags/NodeJs/" rel="tag"><i class="fa fa-tag"></i> NodeJs</a>
+            <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i> Java</a>
           
         </div>
       
@@ -527,8 +557,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/07/06/Spring配置切面/" rel="next" title="Spring配置切面">
-                <i class="fa fa-chevron-left"></i> Spring配置切面
+              <a href="/2018/07/09/关于FM模块功能及相关实现介绍/" rel="next" title="关于FM功能模块及相关实现介绍">
+                <i class="fa fa-chevron-left"></i> 关于FM功能模块及相关实现介绍
               </a>
             
           </div>
@@ -536,10 +566,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/07/06/Centos安装rz和sz通信套件/" rel="prev" title="Centos安装rz和sz通信套件">
-                Centos安装rz和sz通信套件 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -598,8 +624,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -673,6 +708,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#为什么要用定时任务"><span class="nav-number">1.</span> <span class="nav-text">为什么要用定时任务</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Java中定时任务有哪几种方式"><span class="nav-number">2.</span> <span class="nav-text">Java中定时任务有哪几种方式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#具体实现"><span class="nav-number">3.</span> <span class="nav-text">具体实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解释"><span class="nav-number">4.</span> <span class="nav-text">解释</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -882,7 +933,7 @@
       <script type="text/javascript">
       function renderGitment(){
         var gitment = new Gitmint({ 
-			id: '1530863349000',
+			id: '1533543447000',
             owner: 'zhangxingr',
             repo: 'zhangxingr.github.io',
             
