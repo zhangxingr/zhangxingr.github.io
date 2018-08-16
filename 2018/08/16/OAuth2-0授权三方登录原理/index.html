@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Java,OAuth," />
 
 
 
@@ -79,16 +79,20 @@
 
 
 
-<meta name="description" content="Java、通信、生活">
-<meta property="og:type" content="website">
-<meta property="og:title" content="zhangxingr&#39; blog">
-<meta property="og:url" content="https://zhangxingr.github.io/tags/Multithreading/index.html">
+<meta name="description" content="OAuth2.0协议基本概念  OAuth 2.0是行业标准的授权协议。OAuth 2.0取代了2006年创建的原始OAuth协议所做的工作.OAuth 2.0专注于客户端开发人员的简单性，同时为Web应用程序，桌面应用程序，移动电话和客厅设备提供特定的授权流程。该规范及其扩展正在IETF OAuth工作组内开发。    OAuth2.0协议中的授权模式  授权码模式（authorization">
+<meta name="keywords" content="Java,OAuth">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OAuth2.0授权三方登录原理">
+<meta property="og:url" content="https://zhangxingr.github.io/2018/08/16/OAuth2-0授权三方登录原理/index.html">
 <meta property="og:site_name" content="zhangxingr&#39; blog">
-<meta property="og:description" content="Java、通信、生活">
+<meta property="og:description" content="OAuth2.0协议基本概念  OAuth 2.0是行业标准的授权协议。OAuth 2.0取代了2006年创建的原始OAuth协议所做的工作.OAuth 2.0专注于客户端开发人员的简单性，同时为Web应用程序，桌面应用程序，移动电话和客厅设备提供特定的授权流程。该规范及其扩展正在IETF OAuth工作组内开发。    OAuth2.0协议中的授权模式  授权码模式（authorization">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://zhangxingr.github.io/uploads/pages/微信图片_20180807222406.png">
+<meta property="og:updated_time" content="2018-08-16T15:30:53.757Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="zhangxingr&#39; blog">
-<meta name="twitter:description" content="Java、通信、生活">
+<meta name="twitter:title" content="OAuth2.0授权三方登录原理">
+<meta name="twitter:description" content="OAuth2.0协议基本概念  OAuth 2.0是行业标准的授权协议。OAuth 2.0取代了2006年创建的原始OAuth协议所做的工作.OAuth 2.0专注于客户端开发人员的简单性，同时为Web应用程序，桌面应用程序，移动电话和客厅设备提供特定的授权流程。该规范及其扩展正在IETF OAuth工作组内开发。    OAuth2.0协议中的授权模式  授权码模式（authorization">
+<meta name="twitter:image" content="https://zhangxingr.github.io/uploads/pages/微信图片_20180807222406.png">
 
 
 
@@ -118,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="https://zhangxingr.github.io/tags/Multithreading/"/>
+  <link rel="canonical" href="https://zhangxingr.github.io/2018/08/16/OAuth2-0授权三方登录原理/"/>
 
 
 
 
 
-  <title>标签: Multithreading | zhangxingr' blog</title>
+  <title>OAuth2.0授权三方登录原理 | zhangxingr' blog</title>
   
 
 
@@ -153,7 +157,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -305,54 +309,284 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>Multithreading<small>标签</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zhangxingr.github.io/2018/08/16/OAuth2-0授权三方登录原理/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhangxingrui">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zhangxingr' blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/07/09/关于FM模块功能及相关实现介绍/" itemprop="url">
-              
-                <span itemprop="name">关于FM功能模块及相关实现介绍</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">OAuth2.0授权三方登录原理</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-07-09T22:47:08+08:00"
-              content="2018-07-09" >
-          07-09
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-16T22:48:00+08:00">
+                2018-08-16
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/08/16/OAuth2-0授权三方登录原理/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/08/16/OAuth2-0授权三方登录原理/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/08/16/OAuth2-0授权三方登录原理/" class="leancloud_visitors" data-flag-title="OAuth2.0授权三方登录原理">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+				 <span>℃</span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  762
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="OAuth2-0协议基本概念"><a href="#OAuth2-0协议基本概念" class="headerlink" title="OAuth2.0协议基本概念"></a>OAuth2.0协议基本概念</h1><p><br></p>
+<blockquote>
+<p>OAuth 2.0是行业标准的授权协议。OAuth 2.0取代了2006年创建的原始OAuth协议所做的工作.OAuth 2.0专注于客户端开发人员的简单性，同时为Web应用程序，桌面应用程序，移动电话和客厅设备提供特定的授权流程。该规范及其扩展正在<a href="https://www.ietf.org/mailman/listinfo/oauth" target="_blank" rel="noopener">IETF OAuth工作组</a>内开发。 </p>
+</blockquote>
+<p><br></p>
+<h1 id="OAuth2-0协议中的授权模式"><a href="#OAuth2-0协议中的授权模式" class="headerlink" title="OAuth2.0协议中的授权模式"></a>OAuth2.0协议中的授权模式</h1><p><br></p>
+<ul>
+<li><strong>授权码模式（authorization code）</strong></li>
+<li>简化模式（implicit）</li>
+<li>密码模式（resource owner password credentials）</li>
+<li>客户端模式（client credentials）</li>
+</ul>
+<a id="more"></a>
+<p><br></p>
+<h1 id="OAuth2-0协议实现第三方登录"><a href="#OAuth2-0协议实现第三方登录" class="headerlink" title="OAuth2.0协议实现第三方登录"></a>OAuth2.0协议实现第三方登录</h1><p><br></p>
+<blockquote>
+<p>刚开始我特别疑惑，OAuth2.0的目的是实现授权的功能，和应用实现三方登录有什么联系呢？然后看了慕课网上JoJozhai老师的《Spring Security开发安全的REST服务》课程，恍然大悟。</p>
+<p>OAuth2.0可以帮组我们获取三方应用的授权，如果我们从三方应用获取到用户信息，就可以拿到用户信息在本地应用构建属于我们自己的用户，也就是把三方应用的用户变成我们自己的用户。</p>
+<p>但是新的问题又来了，难道每次用户通过三方登录都要重新构建用户吗？这倒不用，我们可以将从三方应用获取到用户ID和本地构建的用户的ID建立映射关系。</p>
+<p>那么OAuth2.0协议三方登录的具体流程是如何的呢？这里我只介绍一下OAuth2.0协议的授权码模式是如何帮助我们实现三方登录的。</p>
+</blockquote>
+<p>OAuth2.0协议第三方登录流程图（<strong><em>图片截图自慕课网课程，如有侵权，请联系我删除</em></strong>）</p>
+<p><img src="\uploads\pages\微信图片_20180807222406.png" alt=""></p>
+<p><strong>说明：</strong></p>
+<blockquote>
+<p>当用户访问我们本地应用的时候，我们将用户指向第三方认证服务器，用户在上面确认是否同意授权的动作（<strong>注意：这个动作是在第三方应用上确认的</strong>），当用户确认授权后，第三方应用会返回到我们本地应用的某个地址，这个地址是本地应用和第三方应用之前就协商好了的，同时也会携带一个授权码回来。</p>
+<p>本地应用获取到来自第三方应用的授权码之后，再把授权码带上去第三方应用认证服务器申请Token，获取到Token之后，之后就可以带上这个Token去请求一些指定的用户信息（<strong>Token具有时效性和功能性</strong>）。</p>
+<p>如果要实现第三方登录，这时候本地应用请求的就是一些用户的可以公开的信息，比如用户昵称，用户ID。本地应用拿到这些信息就可以在本地构建一个本地用户，和第三方应用的用户建立好映射关系以便下次登录，这样就实现了第三方登录。</p>
+</blockquote>
+<p><br></p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><br></p>
+<p><a href="https://coding.imooc.com/class/134.html" target="_blank" rel="noopener">Spring Security开发安全的REST服务</a></p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/wechatpay.png" alt="zhangxingrui 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/uploads/alipay.png" alt="zhangxingrui 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i> Java</a>
+          
+            <a href="/tags/OAuth/" rel="tag"><i class="fa fa-tag"></i> OAuth</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/08/简述线程/" rel="next" title="简述线程">
+                <i class="fa fa-chevron-left"></i> 简述线程
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -360,6 +594,17 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
+
+  
+
+
 
         </div>
         
@@ -380,8 +625,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -455,6 +709,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#OAuth2-0协议基本概念"><span class="nav-number">1.</span> <span class="nav-text">OAuth2.0协议基本概念</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#OAuth2-0协议中的授权模式"><span class="nav-number">2.</span> <span class="nav-text">OAuth2.0协议中的授权模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#OAuth2-0协议实现第三方登录"><span class="nav-number">3.</span> <span class="nav-text">OAuth2.0协议实现第三方登录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">4.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -610,6 +880,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -656,6 +930,30 @@
 
     
 
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({ 
+			id: '1534430880000',
+            owner: 'zhangxingr',
+            repo: 'zhangxingr.github.io',
+            
+            lang: "zh-Hans" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: 'c714b7696b8e8c46d671bcc3538599c7e0e3c730',
+            
+                client_id: 'fbc2eec6ee9afc868c9a'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
     
 
 
