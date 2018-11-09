@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Java,WebService,Wsdl," />
 
 
 
@@ -79,17 +79,20 @@
 
 
 
-<meta name="description" content="Java、通信、生活">
-<meta property="og:type" content="website">
-<meta property="og:title" content="categories">
-<meta property="og:url" content="https://zhangxingr.github.io/categories/index.html">
+<meta name="description" content="前言 最近在给部门自己的开发工具写Web界面的测试工具，其中要调用Axis2实现的WebService接口 。 以前没做过，咨询了以前在税局待过的朋友说大体上有两种实现方式：一种是根据wsdl文件生成本地的客户端代码，把代码放在自己的项目里面；一种是通过RPC远程调用。">
+<meta name="keywords" content="Java,WebService,Wsdl">
+<meta property="og:type" content="article">
+<meta property="og:title" content="根据WSDL文件生成调用RPC的Java代码">
+<meta property="og:url" content="https://zhangxingr.github.io/2018/11/09/根据WSDL文件生成调用RPC的Java代码/index.html">
 <meta property="og:site_name" content="zhangxingr&#39; blog">
-<meta property="og:description" content="Java、通信、生活">
+<meta property="og:description" content="前言 最近在给部门自己的开发工具写Web界面的测试工具，其中要调用Axis2实现的WebService接口 。 以前没做过，咨询了以前在税局待过的朋友说大体上有两种实现方式：一种是根据wsdl文件生成本地的客户端代码，把代码放在自己的项目里面；一种是通过RPC远程调用。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-04T16:04:34.173Z">
+<meta property="og:image" content="https://zhangxingr.github.io/uploads/pages/78aa679ec0c7824fdbbd367539b8fd5e.gif">
+<meta property="og:updated_time" content="2018-11-09T06:25:56.194Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="categories">
-<meta name="twitter:description" content="Java、通信、生活">
+<meta name="twitter:title" content="根据WSDL文件生成调用RPC的Java代码">
+<meta name="twitter:description" content="前言 最近在给部门自己的开发工具写Web界面的测试工具，其中要调用Axis2实现的WebService接口 。 以前没做过，咨询了以前在税局待过的朋友说大体上有两种实现方式：一种是根据wsdl文件生成本地的客户端代码，把代码放在自己的项目里面；一种是通过RPC远程调用。">
+<meta name="twitter:image" content="https://zhangxingr.github.io/uploads/pages/78aa679ec0c7824fdbbd367539b8fd5e.gif">
 
 
 
@@ -119,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="https://zhangxingr.github.io/categories/"/>
+  <link rel="canonical" href="https://zhangxingr.github.io/2018/11/09/根据WSDL文件生成调用RPC的Java代码/"/>
 
 
 
 
 
-  <title>categories | zhangxingr' blog</title>
+  <title>根据WSDL文件生成调用RPC的Java代码 | zhangxingr' blog</title>
   
 
 
@@ -308,40 +311,297 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zhangxingr.github.io/2018/11/09/根据WSDL文件生成调用RPC的Java代码/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhangxingrui">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zhangxingr' blog">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">categories</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="category-all-page">
-            <div class="category-all-title">
-                目前共计 12 个分类
+          <h1 class="post-title" itemprop="name headline">根据WSDL文件生成调用RPC的Java代码</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-09T13:43:10+08:00">
+                2018-11-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/11/09/根据WSDL文件生成调用RPC的Java代码/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/11/09/根据WSDL文件生成调用RPC的Java代码/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/11/09/根据WSDL文件生成调用RPC的Java代码/" class="leancloud_visitors" data-flag-title="根据WSDL文件生成调用RPC的Java代码">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+				 <span>℃</span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  758
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+              
             </div>
-            <div class="category-all">
-              <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Kafka/">Kafka</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/NodeJs/">NodeJs</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Redis/">Redis</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Share/">Share</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Spring/">Spring</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/activiti/">activiti</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/总结/">总结</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/线程/">线程</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/美食/">美食</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/通信/">通信</a><span class="category-list-count">1</span></li></ul>
-            </div>
-          </div>
-        
-      </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <p><img src="\uploads\pages\78aa679ec0c7824fdbbd367539b8fd5e.gif" alt=""></p>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>
+<p>最近在给部门自己的开发工具写Web界面的测试工具，其中要调用Axis2实现的WebService接口 。</p>
+<p>以前没做过，咨询了以前在税局待过的朋友说大体上有两种实现方式：一种是根据wsdl文件生成本地的客户端代码，把代码放在自己的项目里面；一种是通过RPC远程调用。</p>
+</blockquote>
+<a id="more"></a>
+<h1 id="对比"><a href="#对比" class="headerlink" title="对比"></a>对比</h1><ol>
+<li>速度：把客户端代码放在本地这种方式，调用接口会更快一些。</li>
+<li>方便：把客户端代码凡在本地然后调用webservie接口，返回的对象可以用wsdl生成的对象接收，然后很方便的使用这些对象。而RPC调用返回的是Object类型，拿到手上也不好用它。</li>
+<li>灵活：当然呢，RPC调用的好处很明显，就是调用接口的一方不用关心服务端（webService）提供的借口的变化。而生成客户端代码呢，就是一旦webService的接口发生了啥改动就得重新生成Java代码来替换当前的代码。</li>
+</ol>
+<blockquote>
+<p>我最终还是采用了将客户端代码生成到本地，一来对速度要求比较高，二来webService接口端也不会经常发生改动。。。</p>
+</blockquote>
+<h1 id="Wsdl-To-Java"><a href="#Wsdl-To-Java" class="headerlink" title="Wsdl To Java"></a>Wsdl To Java</h1><blockquote>
+<p>最终的难点就集中在了如何根据Wsdl生成Java文件并打包，如果有多个Wsdl文件怎么处理。</p>
+</blockquote>
+<p>百度了一下发现有三种方式可以根据Wsdl文件生成Java代码</p>
+<ol>
+<li><p>用IDEA等IDE工具可以很方便的生成（我试过生成出来的代码太凌乱了）</p>
+</li>
+<li><p>用Axis2或者Cxf自带的工具生成（没试过，读者可以试试）</p>
+</li>
+<li><p>用JDK自带的wsimport命令生成（我用的这种，挺好用的）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wsimport -s D:\temp -p cn.ljl.sand.jws.chapter3.client.wsimport http:<span class="comment">//localhost:6666/service/interpret?wsdl</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h1 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h1><blockquote>
+<p>用上面的方式已经生成了Java代码了，但是每次用wsimport只能针对一个wsdl文件生成代码，我查阅了很多资料发现都没有办法针对多个wsdl文件生成Java代码的，唉，如果有办法的朋友请评论区留言告诉我，谢谢。</p>
+<p>迫不得已最后写了一个批处理程序来处理。</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off </span><br><span class="line">setlocal ENABLEDELAYEDEXPANSION  </span><br><span class="line"></span><br><span class="line"><span class="built_in">set</span> postfix=Http.wsdl</span><br><span class="line"><span class="built_in">set</span> <span class="built_in">pwd</span>=C:\Users\zxr\Desktop\wsdl</span><br><span class="line"><span class="built_in">set</span> pwd_jaxb=C:/Users/zxr/Desktop/WsdlToJava/jaxb_bind.xml</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> /R <span class="string">"%pwd%"</span> %%i <span class="keyword">in</span> (*) <span class="keyword">do</span> ( </span><br><span class="line"><span class="built_in">set</span> filename=%%~fpi </span><br><span class="line">call :check %%~fpi</span><br><span class="line">) </span><br><span class="line"></span><br><span class="line">pause </span><br><span class="line"> </span><br><span class="line">:check </span><br><span class="line"><span class="keyword">for</span> %%i <span class="keyword">in</span> (%postfix%) <span class="keyword">do</span> (</span><br><span class="line"><span class="built_in">echo</span> %1|findstr <span class="string">"%%i"</span> &amp;&amp; wsimport -extension -keep -b %pwd_jaxb% %filename%</span><br><span class="line">)</span><br><span class="line">goto :eof </span><br><span class="line">pause</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>还有就是wsimport编译生成Java代码的时候可能会遇到wsdl文件里面的枚举值过多的情况，这时候可以添加一个jaxb的绑定文件。</p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">jaxb:bindings</span> <span class="attr">xmlns:jaxb</span>=<span class="string">"http://java.sun.com/xml/ns/jaxb"</span></span></span><br><span class="line"><span class="tag">               <span class="attr">xmlns:xsd</span>=<span class="string">"http://www.w3.org/2001/XMLSchema"</span></span></span><br><span class="line"><span class="tag">               <span class="attr">jaxb:version</span>=<span class="string">"2.0"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">jaxb:bindings</span> &gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">jaxb:globalBindings</span> <span class="attr">generateElementProperty</span>=<span class="string">"false"</span> <span class="attr">typesafeEnumMaxMembers</span>=<span class="string">"2000"</span>/&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">jaxb:bindings</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">jaxb:bindings</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>这个感觉应该是bug吧。。。请看这个</p>
+<p><a href="http://mail-archives.apache.org/mod_mbox/cxf-users/200901.mbox/%3C21491299.post@talk.nabble.com%3E" target="_blank" rel="noopener">Re: wsdl2java no verbose output - globalbindings for typesafeEnumMaxMembers</a></p>
+
       
     </div>
     
     
     
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/wechat.jpg" alt="zhangxingrui wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，订阅我的博客！</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/wechatpay.png" alt="zhangxingrui 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/uploads/alipay.png" alt="zhangxingrui 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i> Java</a>
+          
+            <a href="/tags/WebService/" rel="tag"><i class="fa fa-tag"></i> WebService</a>
+          
+            <a href="/tags/Wsdl/" rel="tag"><i class="fa fa-tag"></i> Wsdl</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/10/14/activiti数据表学习之初识篇/" rel="next" title="activiti数据表学习之初识篇">
+                <i class="fa fa-chevron-left"></i> activiti数据表学习之初识篇
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -381,8 +641,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -470,6 +739,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#对比"><span class="nav-number">2.</span> <span class="nav-text">对比</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Wsdl-To-Java"><span class="nav-number">3.</span> <span class="nav-text">Wsdl To Java</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#遇到的问题"><span class="nav-number">4.</span> <span class="nav-text">遇到的问题</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -679,7 +964,7 @@
       <script type="text/javascript">
       function renderGitment(){
         var gitment = new Gitmint({ 
-			id: '1529556601000',
+			id: '1541742190000',
             owner: 'zhangxingr',
             repo: 'zhangxingr.github.io',
             
