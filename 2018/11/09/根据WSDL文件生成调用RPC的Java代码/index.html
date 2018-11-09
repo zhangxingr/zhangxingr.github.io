@@ -79,19 +79,19 @@
 
 
 
-<meta name="description" content="前言 最近在给部门自己的开发工具写Web界面的测试工具，其中要调用Axis2实现的WebService接口 。 以前没做过，咨询了以前在税局待过的朋友说大体上有两种实现方式：一种是根据wsdl文件生成本地的客户端代码，把代码放在自己的项目里面；一种是通过RPC远程调用。">
+<meta name="description" content="前言 最近在给部门自己的开发工具写Web界面的测试工具，其中要调用Axis2实现的WebService接口 。 以前没做过，咨询了以前在税局待过的朋友说大体上有两种实现方式：一种是根据wsdl文件生成本地的客户端代码（也就是所谓的stub桩），把代码放在自己的项目里面；一种是通过HttpClient动态代理。">
 <meta name="keywords" content="Java,WebService,Wsdl">
 <meta property="og:type" content="article">
 <meta property="og:title" content="根据WSDL文件生成调用RPC的Java代码">
 <meta property="og:url" content="https://zhangxingr.github.io/2018/11/09/根据WSDL文件生成调用RPC的Java代码/index.html">
 <meta property="og:site_name" content="zhangxingr&#39; blog">
-<meta property="og:description" content="前言 最近在给部门自己的开发工具写Web界面的测试工具，其中要调用Axis2实现的WebService接口 。 以前没做过，咨询了以前在税局待过的朋友说大体上有两种实现方式：一种是根据wsdl文件生成本地的客户端代码，把代码放在自己的项目里面；一种是通过RPC远程调用。">
+<meta property="og:description" content="前言 最近在给部门自己的开发工具写Web界面的测试工具，其中要调用Axis2实现的WebService接口 。 以前没做过，咨询了以前在税局待过的朋友说大体上有两种实现方式：一种是根据wsdl文件生成本地的客户端代码（也就是所谓的stub桩），把代码放在自己的项目里面；一种是通过HttpClient动态代理。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://zhangxingr.github.io/uploads/pages/78aa679ec0c7824fdbbd367539b8fd5e.gif">
-<meta property="og:updated_time" content="2018-11-09T06:25:56.194Z">
+<meta property="og:updated_time" content="2018-11-09T10:50:06.579Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="根据WSDL文件生成调用RPC的Java代码">
-<meta name="twitter:description" content="前言 最近在给部门自己的开发工具写Web界面的测试工具，其中要调用Axis2实现的WebService接口 。 以前没做过，咨询了以前在税局待过的朋友说大体上有两种实现方式：一种是根据wsdl文件生成本地的客户端代码，把代码放在自己的项目里面；一种是通过RPC远程调用。">
+<meta name="twitter:description" content="前言 最近在给部门自己的开发工具写Web界面的测试工具，其中要调用Axis2实现的WebService接口 。 以前没做过，咨询了以前在税局待过的朋友说大体上有两种实现方式：一种是根据wsdl文件生成本地的客户端代码（也就是所谓的stub桩），把代码放在自己的项目里面；一种是通过HttpClient动态代理。">
 <meta name="twitter:image" content="https://zhangxingr.github.io/uploads/pages/78aa679ec0c7824fdbbd367539b8fd5e.gif">
 
 
@@ -428,7 +428,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  758
+                  770
                 </span>
               
 
@@ -468,13 +468,13 @@
         <p><img src="\uploads\pages\78aa679ec0c7824fdbbd367539b8fd5e.gif" alt=""></p>
 <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>
 <p>最近在给部门自己的开发工具写Web界面的测试工具，其中要调用Axis2实现的WebService接口 。</p>
-<p>以前没做过，咨询了以前在税局待过的朋友说大体上有两种实现方式：一种是根据wsdl文件生成本地的客户端代码，把代码放在自己的项目里面；一种是通过RPC远程调用。</p>
+<p>以前没做过，咨询了以前在税局待过的朋友说大体上有两种实现方式：一种是根据wsdl文件生成本地的客户端代码（也就是所谓的stub桩），把代码放在自己的项目里面；一种是通过HttpClient动态代理。</p>
 </blockquote>
 <a id="more"></a>
 <h1 id="对比"><a href="#对比" class="headerlink" title="对比"></a>对比</h1><ol>
 <li>速度：把客户端代码放在本地这种方式，调用接口会更快一些。</li>
 <li>方便：把客户端代码凡在本地然后调用webservie接口，返回的对象可以用wsdl生成的对象接收，然后很方便的使用这些对象。而RPC调用返回的是Object类型，拿到手上也不好用它。</li>
-<li>灵活：当然呢，RPC调用的好处很明显，就是调用接口的一方不用关心服务端（webService）提供的借口的变化。而生成客户端代码呢，就是一旦webService的接口发生了啥改动就得重新生成Java代码来替换当前的代码。</li>
+<li>灵活：当然呢，Http动态代理调用的好处很明显，就是调用接口的一方不用关心服务端（webService）提供的借口的变化。而生成客户端代码呢，就是一旦webService的接口发生了啥改动就得重新生成Java代码来替换当前的代码。</li>
 </ol>
 <blockquote>
 <p>我最终还是采用了将客户端代码生成到本地，一来对速度要求比较高，二来webService接口端也不会经常发生改动。。。</p>
