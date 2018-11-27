@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="hexo,github,next,gitment," />
+  <meta name="keywords" content="Linux,Java," />
 
 
 
@@ -79,18 +79,21 @@
 
 
 
-<meta name="description" content="前言本来一直想写一篇关于hexo+github搭建blog的入门文章，自己记录一下也可以给别人瞅瞅学习学习。但是呢，一来文笔确实不好，二来我自己都是到处找别人的文章来学习借鉴的，实在不敢掠美，所以我就推荐一下我入门的文章好啦（之前都收藏了哒）">
-<meta name="keywords" content="hexo,github,next,gitment">
+<meta name="description" content="前言 上周接了个任务，写一个monitor定时采集服务器上指定的几个应用的数据，包括像CPU占用率、线程数、句柄数等等。不是很难，但是要下发的shell命令很多，采集的数据也很多，而且为了方便本地调试，就准备写两套代码。一套用于本地远程登录服务器下发shell，一套用于当monitor程序部署到服务器上本地执行shell。本篇就来讲一讲我在服务器本地执行shell遇到的坑。。。">
+<meta name="keywords" content="Linux,Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo+github+next搭建个人博客">
-<meta property="og:url" content="https://zhangxingr.github.io/2018/06/28/hexo+github+next搭建个人博客/index.html">
+<meta property="og:title" content="Java本地调用shell遇到的问题">
+<meta property="og:url" content="https://zhangxingr.github.io/2018/11/27/Java本地调用shell遇到的问题/index.html">
 <meta property="og:site_name" content="zhangxingr&#39; blog">
-<meta property="og:description" content="前言本来一直想写一篇关于hexo+github搭建blog的入门文章，自己记录一下也可以给别人瞅瞅学习学习。但是呢，一来文笔确实不好，二来我自己都是到处找别人的文章来学习借鉴的，实在不敢掠美，所以我就推荐一下我入门的文章好啦（之前都收藏了哒）">
+<meta property="og:description" content="前言 上周接了个任务，写一个monitor定时采集服务器上指定的几个应用的数据，包括像CPU占用率、线程数、句柄数等等。不是很难，但是要下发的shell命令很多，采集的数据也很多，而且为了方便本地调试，就准备写两套代码。一套用于本地远程登录服务器下发shell，一套用于当monitor程序部署到服务器上本地执行shell。本篇就来讲一讲我在服务器本地执行shell遇到的坑。。。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-04T16:04:34.167Z">
+<meta property="og:image" content="https://zhangxingr.github.io/uploads/pages/2018-11-27_160121.png">
+<meta property="og:image" content="https://zhangxingr.github.io/uploads/pages/2018-11-27_161604.png">
+<meta property="og:updated_time" content="2018-11-27T08:28:43.971Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hexo+github+next搭建个人博客">
-<meta name="twitter:description" content="前言本来一直想写一篇关于hexo+github搭建blog的入门文章，自己记录一下也可以给别人瞅瞅学习学习。但是呢，一来文笔确实不好，二来我自己都是到处找别人的文章来学习借鉴的，实在不敢掠美，所以我就推荐一下我入门的文章好啦（之前都收藏了哒）">
+<meta name="twitter:title" content="Java本地调用shell遇到的问题">
+<meta name="twitter:description" content="前言 上周接了个任务，写一个monitor定时采集服务器上指定的几个应用的数据，包括像CPU占用率、线程数、句柄数等等。不是很难，但是要下发的shell命令很多，采集的数据也很多，而且为了方便本地调试，就准备写两套代码。一套用于本地远程登录服务器下发shell，一套用于当monitor程序部署到服务器上本地执行shell。本篇就来讲一讲我在服务器本地执行shell遇到的坑。。。">
+<meta name="twitter:image" content="https://zhangxingr.github.io/uploads/pages/2018-11-27_160121.png">
 
 
 
@@ -120,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="https://zhangxingr.github.io/2018/06/28/hexo+github+next搭建个人博客/"/>
+  <link rel="canonical" href="https://zhangxingr.github.io/2018/11/27/Java本地调用shell遇到的问题/"/>
 
 
 
 
 
-  <title>hexo+github+next搭建个人博客 | zhangxingr' blog</title>
+  <title>Java本地调用shell遇到的问题 | zhangxingr' blog</title>
   
 
 
@@ -321,7 +324,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zhangxingr.github.io/2018/06/28/hexo+github+next搭建个人博客/">
+    <link itemprop="mainEntityOfPage" href="https://zhangxingr.github.io/2018/11/27/Java本地调用shell遇到的问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zhangxingrui">
@@ -338,7 +341,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">hexo+github+next搭建个人博客</h1>
+          <h1 class="post-title" itemprop="name headline">Java本地调用shell遇到的问题</h1>
         
 
         <div class="post-meta">
@@ -350,8 +353,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-28T22:48:01+08:00">
-                2018-06-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-27T15:45:13+08:00">
+                2018-11-27
               </time>
             
 
@@ -373,8 +376,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Share/" itemprop="url" rel="index">
-                    <span itemprop="name">Share</span>
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
                   </a>
                 </span>
 
@@ -391,8 +394,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/06/28/hexo+github+next搭建个人博客/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/06/28/hexo+github+next搭建个人博客/" itemprop="commentsCount"></span>
+                <a href="/2018/11/27/Java本地调用shell遇到的问题/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/11/27/Java本地调用shell遇到的问题/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -400,7 +403,7 @@
 
           
           
-             <span id="/2018/06/28/hexo+github+next搭建个人博客/" class="leancloud_visitors" data-flag-title="hexo+github+next搭建个人博客">
+             <span id="/2018/11/27/Java本地调用shell遇到的问题/" class="leancloud_visitors" data-flag-title="Java本地调用shell遇到的问题">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -426,7 +429,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  227
+                  701
                 </span>
               
 
@@ -442,7 +445,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  3
                 </span>
               
             </div>
@@ -463,41 +466,37 @@
       
 
       
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>本来一直想写一篇关于hexo+github搭建blog的入门文章，自己记录一下也可以给别人瞅瞅学习学习。但是呢，一来文笔确实不好，二来我自己都是到处找别人的文章来学习借鉴的，实在不敢掠美，所以我就推荐一下我入门的文章好啦（之前都收藏了哒）</p>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>
+<p>上周接了个任务，写一个monitor定时采集服务器上指定的几个应用的数据，包括像CPU占用率、线程数、句柄数等等。不是很难，但是要下发的shell命令很多，采集的数据也很多，而且为了方便本地调试，就准备写两套代码。一套用于本地远程登录服务器下发shell，一套用于当monitor程序部署到服务器上本地执行shell。本篇就来讲一讲我在服务器本地执行shell遇到的坑。。。</p>
+</blockquote>
 <a id="more"></a>
-<h1 id="推荐文章"><a href="#推荐文章" class="headerlink" title="推荐文章"></a>推荐文章</h1><ul>
-<li><p>环境搭建</p>
-<p><a href="https://zhangslob.github.io/2017/02/28/%E6%95%99%E4%BD%A0%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%8CHexo-Github/" target="_blank" rel="noopener">教你免费搭建个人博客，Hexo&amp;Github</a></p>
-<p><a href="http://www.cnblogs.com/zhcncn/p/4097881.html" target="_blank" rel="noopener">Hexo搭建Github静态博客</a></p>
-</li>
-</ul>
-<ul>
-<li><p>Next主题及各插件安装</p>
-<p><a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">Next使用文档</a></p>
-</li>
-</ul>
-<ul>
-<li><p>Next主题美化</p>
-<p><a href="https://blog.csdn.net/u012443858/article/details/60812982" target="_blank" rel="noopener">hexo+github教程之三：hexo next主题配置</a></p>
-<p><a href="https://segmentfault.com/a/1190000009544924" target="_blank" rel="noopener">hexo的next主题个性化配置教程</a></p>
-<p><a href="https://www.jianshu.com/p/78c218f9d1e7" target="_blank" rel="noopener">Hexo-设置阅读全文</a></p>
-</li>
-</ul>
-<ul>
-<li><p>Gitment使用</p>
-<p><a href="http://www.aisun.org/2017/09/hexo+next+gitment/" target="_blank" rel="noopener">为 hexo NexT 添加 Gitment 评论插件</a></p>
-<p><a href="https://www.cnblogs.com/pangguoming/p/8094815.html" target="_blank" rel="noopener">为 hexo NexT 添加 Gitment 评论插件</a></p>
-<p><a href="https://imsun.net/posts/gitment-introduction/" target="_blank" rel="noopener">Gitment：使用 GitHub Issues 搭建评论系统</a></p>
-</li>
-</ul>
-<ul>
-<li><p>插件地址</p>
-<p><a href="https://leancloud.cn/" target="_blank" rel="noopener">leancloud</a></p>
-<p><a href="https://www.algolia.com/" target="_blank" rel="noopener">algolia</a></p>
-<p><a href="https://github.com/EYHN/hexo-helper-live2d/blob/master/README.zh-CN.md" target="_blank" rel="noopener">hexo-helper-live2d</a></p>
-</li>
-</ul>
-<h1 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h1><p>感谢各位博主！！！</p>
+<h1 id="Java要想下发shell命令怎么做呢？"><a href="#Java要想下发shell命令怎么做呢？" class="headerlink" title="Java要想下发shell命令怎么做呢？"></a>Java要想下发shell命令怎么做呢？</h1><ol>
+<li>远程：这个调用比较简单，要用到第三方库jcraft来做ssh连接，然后下发shell命令用Expect4j比较方便，但是最终返回出来的数据不太好处理，一大串字符串，我要的数据就那么几个，用正则来慢慢匹配只有。远程下发shell的网上资料很多，我现有的代码与公司业务结合比较紧密，不方便贴出来，可自定搜索。</li>
+<li>本地：本地执行shell可以用jdk自带的Runtime和ProcessBuilder，推荐使用ProcessBuilder。</li>
+</ol>
+<h1 id="Runtime"><a href="#Runtime" class="headerlink" title="Runtime"></a>Runtime</h1><p>eg:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String s = <span class="string">"ps -ef|grep abc"</span>;</span><br><span class="line">        Runtime.getRuntime().exec(s);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Runtime下面其实也是调用的ProcessBuilder，所以我推荐直接使用ProcessBuilder算了。。。</p>
+</blockquote>
+<p>Runtime里面用到ProcessBuilder</p>
+<p><img src="\uploads\pages\2018-11-27_160121.png" alt=""></p>
+<h1 id="ProcessBuilder"><a href="#ProcessBuilder" class="headerlink" title="ProcessBuilder"></a>ProcessBuilder</h1><blockquote>
+<p>ProcessBuilder相对于Runtime传参要复杂一些，都是以数组或列表的形式。</p>
+</blockquote>
+<p>eg:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; commmands = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">commmands.add(<span class="string">"ps aux | grep abc"</span>);</span><br><span class="line"></span><br><span class="line">ProcessBuilder pb = <span class="keyword">new</span> ProcessBuilder(commmands);</span><br><span class="line">Process process = pb.start();</span><br><span class="line"></span><br><span class="line">BufferedReader std = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(process.getInputStream()));</span><br><span class="line">StringBuilder strBuilder = <span class="keyword">new</span> StringBuilder();</span><br><span class="line"></span><br><span class="line">String stdLine;</span><br><span class="line"><span class="keyword">while</span>((stdLine = std.readLine()) != <span class="keyword">null</span>) &#123;</span><br><span class="line">    System.out.println(stdLine);</span><br><span class="line">    strBuilder.append(stdLine).append(<span class="string">"\r\n"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>但是要注意了，这样会出问题。因为ProcessBuilder要求我们如果要执行的命令带有参数，我们需要把命令拆分开来，一个一个的放到数组里面才能正常执行，但是这样很不友好呀，我一个命令很长很长的时候怎办呢？这个时候可以用到sh -c。</p>
+</blockquote>
+<p>我们可以man一下sh的用法，sh -c 后面跟字符串，这样就可以放入一个完整的命令啦。</p>
+<p><img src="\uploads\pages\2018-11-27_161604.png" alt=""></p>
+<p>所以修改一下代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; commmands = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        commmands.add(<span class="string">"sh"</span>);</span><br><span class="line">        commmands.add(<span class="string">"-c"</span>);</span><br><span class="line">        commmands.add(<span class="string">"ps aux | grep abc"</span>);</span><br><span class="line"></span><br><span class="line">        ProcessBuilder pb = <span class="keyword">new</span> ProcessBuilder(commmands);</span><br><span class="line">        Process process = pb.start();</span><br><span class="line"></span><br><span class="line">        BufferedReader std = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(process.getInputStream()));</span><br><span class="line">        StringBuilder strBuilder = <span class="keyword">new</span> StringBuilder();</span><br><span class="line"></span><br><span class="line">        String stdLine;</span><br><span class="line">        <span class="keyword">while</span>((stdLine = std.readLine()) != <span class="keyword">null</span>) &#123;</span><br><span class="line">            System.out.println(stdLine);</span><br><span class="line">            strBuilder.append(stdLine).append(<span class="string">"\r\n"</span>);</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+<p>然后再执行发现返回结果里面有grep命令本身的进程信息，所以过滤掉，修改命令</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps aux | grep abc   =&gt;   ps aux | grep abc | grep -v grep</span><br></pre></td></tr></table></figure>
+<p>当然如果和我一样用的windows系统，不好调试的话可以参考我之前文章</p>
+<p><a href="https://zhangxingr.github.io/2018/09/13/IDEA%E8%B0%83%E8%AF%95Jar%E5%8C%85/#more">IDEA调试Jar包</a></p>
 
       
     </div>
@@ -552,13 +551,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/hexo/" rel="tag"><i class="fa fa-tag"></i> hexo</a>
+            <a href="/tags/Linux/" rel="tag"><i class="fa fa-tag"></i> Linux</a>
           
-            <a href="/tags/github/" rel="tag"><i class="fa fa-tag"></i> github</a>
-          
-            <a href="/tags/next/" rel="tag"><i class="fa fa-tag"></i> next</a>
-          
-            <a href="/tags/gitment/" rel="tag"><i class="fa fa-tag"></i> gitment</a>
+            <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i> Java</a>
           
         </div>
       
@@ -571,8 +566,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/26/Java通过HttpClient的请求封装/" rel="next" title="Java通过HttpClient的请求封装">
-                <i class="fa fa-chevron-left"></i> Java通过HttpClient的请求封装
+              <a href="/2018/11/09/了解一下active-mq-jms-consumer/" rel="next" title="了解一下active mq - jms consumer">
+                <i class="fa fa-chevron-left"></i> 了解一下active mq - jms consumer
               </a>
             
           </div>
@@ -580,10 +575,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/06/30/ShutdownHook-Java优雅地停止服务/" rel="prev" title="ShutdownHook Java优雅地停止服务">
-                ShutdownHook Java优雅地停止服务 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -750,7 +741,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#推荐文章"><span class="nav-number">2.</span> <span class="nav-text">推荐文章</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#感谢"><span class="nav-number">3.</span> <span class="nav-text">感谢</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Java要想下发shell命令怎么做呢？"><span class="nav-number">2.</span> <span class="nav-text">Java要想下发shell命令怎么做呢？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Runtime"><span class="nav-number">3.</span> <span class="nav-text">Runtime</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ProcessBuilder"><span class="nav-number">4.</span> <span class="nav-text">ProcessBuilder</span></a></li></ol></div>
             
 
           </div>
@@ -965,7 +956,7 @@
       <script type="text/javascript">
       function renderGitment(){
         var gitment = new Gitmint({ 
-			id: '1530197281000',
+			id: '1543304713000',
             owner: 'zhangxingr',
             repo: 'zhangxingr.github.io',
             
