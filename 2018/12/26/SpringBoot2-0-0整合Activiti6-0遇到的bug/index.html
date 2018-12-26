@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Redis," />
+  <meta name="keywords" content="Java,activiti," />
 
 
 
@@ -79,18 +79,22 @@
 
 
 
-<meta name="description" content="基础命令存储key-value set server:name “test”   set connections 10  根据key取出value get server:name   get connections">
-<meta name="keywords" content="Redis">
+<meta name="description" content="前言最近断断续续整合SpringBoot2.0和Activiti6.0终于到了尾声，结果最后遇到了两个问题半天解决不了，昨天圣诞节晚上弄了很久，记录一下。">
+<meta name="keywords" content="Java,activiti">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Redis官方入门命令导游学习">
-<meta property="og:url" content="https://zhangxingr.github.io/2018/08/23/Redis官方入门命令导游学习/index.html">
+<meta property="og:title" content="SpringBoot2.0.0整合Activiti6.0遇到的bug">
+<meta property="og:url" content="https://zhangxingr.github.io/2018/12/26/SpringBoot2-0-0整合Activiti6-0遇到的bug/index.html">
 <meta property="og:site_name" content="zhangxingr&#39; blog">
-<meta property="og:description" content="基础命令存储key-value set server:name “test”   set connections 10  根据key取出value get server:name   get connections">
+<meta property="og:description" content="前言最近断断续续整合SpringBoot2.0和Activiti6.0终于到了尾声，结果最后遇到了两个问题半天解决不了，昨天圣诞节晚上弄了很久，记录一下。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-24T07:44:27.488Z">
+<meta property="og:image" content="https://zhangxingr.github.io/uploads/activiti/97014a90f603738deabbb288b81bb051f919eca3.gif">
+<meta property="og:image" content="https://zhangxingr.github.io/uploads/activiti/errors/2018-12-26_232359.png">
+<meta property="og:image" content="https://zhangxingr.github.io/uploads/activiti/errors/20180529164221448.png">
+<meta property="og:updated_time" content="2018-12-26T15:57:50.970Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Redis官方入门命令导游学习">
-<meta name="twitter:description" content="基础命令存储key-value set server:name “test”   set connections 10  根据key取出value get server:name   get connections">
+<meta name="twitter:title" content="SpringBoot2.0.0整合Activiti6.0遇到的bug">
+<meta name="twitter:description" content="前言最近断断续续整合SpringBoot2.0和Activiti6.0终于到了尾声，结果最后遇到了两个问题半天解决不了，昨天圣诞节晚上弄了很久，记录一下。">
+<meta name="twitter:image" content="https://zhangxingr.github.io/uploads/activiti/97014a90f603738deabbb288b81bb051f919eca3.gif">
 
 
 
@@ -120,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="https://zhangxingr.github.io/2018/08/23/Redis官方入门命令导游学习/"/>
+  <link rel="canonical" href="https://zhangxingr.github.io/2018/12/26/SpringBoot2-0-0整合Activiti6-0遇到的bug/"/>
 
 
 
 
 
-  <title>Redis官方入门命令导游学习 | zhangxingr' blog</title>
+  <title>SpringBoot2.0.0整合Activiti6.0遇到的bug | zhangxingr' blog</title>
   
 
 
@@ -321,7 +325,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zhangxingr.github.io/2018/08/23/Redis官方入门命令导游学习/">
+    <link itemprop="mainEntityOfPage" href="https://zhangxingr.github.io/2018/12/26/SpringBoot2-0-0整合Activiti6-0遇到的bug/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zhangxingrui">
@@ -338,7 +342,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Redis官方入门命令导游学习</h1>
+          <h1 class="post-title" itemprop="name headline">SpringBoot2.0.0整合Activiti6.0遇到的bug</h1>
         
 
         <div class="post-meta">
@@ -350,8 +354,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-23T17:24:18+08:00">
-                2018-08-23
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-26T22:59:47+08:00">
+                2018-12-26
               </time>
             
 
@@ -373,8 +377,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Redis/" itemprop="url" rel="index">
-                    <span itemprop="name">Redis</span>
+                  <a href="/categories/activiti/" itemprop="url" rel="index">
+                    <span itemprop="name">activiti</span>
                   </a>
                 </span>
 
@@ -391,8 +395,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/08/23/Redis官方入门命令导游学习/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/08/23/Redis官方入门命令导游学习/" itemprop="commentsCount"></span>
+                <a href="/2018/12/26/SpringBoot2-0-0整合Activiti6-0遇到的bug/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/12/26/SpringBoot2-0-0整合Activiti6-0遇到的bug/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -400,7 +404,7 @@
 
           
           
-             <span id="/2018/08/23/Redis官方入门命令导游学习/" class="leancloud_visitors" data-flag-title="Redis官方入门命令导游学习">
+             <span id="/2018/12/26/SpringBoot2-0-0整合Activiti6-0遇到的bug/" class="leancloud_visitors" data-flag-title="SpringBoot2.0.0整合Activiti6.0遇到的bug">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -426,7 +430,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,222
+                  726
                 </span>
               
 
@@ -442,7 +446,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  5
+                  3
                 </span>
               
             </div>
@@ -463,118 +467,21 @@
       
 
       
-        <h1 id="基础命令"><a href="#基础命令" class="headerlink" title="基础命令"></a>基础命令</h1><h4 id="存储key-value"><a href="#存储key-value" class="headerlink" title="存储key-value"></a>存储key-value</h4><blockquote>
-<p>set server:name “test”</p>
-</blockquote>
-<blockquote>
-<p>set connections 10</p>
-</blockquote>
-<h4 id="根据key取出value"><a href="#根据key取出value" class="headerlink" title="根据key取出value"></a>根据key取出value</h4><blockquote>
-<p>get server:name</p>
-</blockquote>
-<blockquote>
-<p>get connections</p>
-</blockquote>
+        <p><img src="\uploads\activiti\97014a90f603738deabbb288b81bb051f919eca3.gif" alt=""></p>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>最近断断续续整合SpringBoot2.0和Activiti6.0终于到了尾声，结果最后遇到了两个问题半天解决不了，昨天圣诞节晚上弄了很久，记录一下。</p>
 <a id="more"></a>
-<h4 id="根据key删除key-value"><a href="#根据key删除key-value" class="headerlink" title="根据key删除key-value"></a>根据key删除key-value</h4><blockquote>
-<p>del connections</p>
-</blockquote>
-<h4 id="根据key对整型value做自增自减"><a href="#根据key对整型value做自增自减" class="headerlink" title="根据key对整型value做自增自减"></a>根据key对整型value做自增自减</h4><blockquote>
-<p>incr connections</p>
-</blockquote>
-<blockquote>
-<p>decr connections</p>
-</blockquote>
-<blockquote>
-<p>如果key值不存在会创建一个key-value数据,value默认为1</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">为什么官方不做一些复杂操作来实现自增或自减的功能呢？</span><br><span class="line"></span><br><span class="line">类似于这样的：</span><br><span class="line"></span><br><span class="line">x = GET count</span><br><span class="line">x = x + 1</span><br><span class="line">SET count x</span><br><span class="line"></span><br><span class="line">上面的方法只适合当只有一个客户端使用的时候，当多个客户端使用的时候就会出现问题：</span><br><span class="line"></span><br><span class="line">Client A reads count as 10.</span><br><span class="line">Client B reads count as 10.</span><br><span class="line">Client A increments 10 and sets count to 11.</span><br><span class="line">Client B increments 10 and sets count to 11.</span><br><span class="line"></span><br><span class="line">我们想要的数据是count==12，为什么现在等于11呢？因为这个操作不是一个原子的操作，不能保证数据一致性。而用redis提供的incr或者是decr则可以避免这样事发生。Redis为不同的数据类型提供了多种原子操作。</span><br></pre></td></tr></table></figure>
-<h4 id="指定key-value存在的时间，过了这个时间就会被自动删除"><a href="#指定key-value存在的时间，过了这个时间就会被自动删除" class="headerlink" title="指定key-value存在的时间，过了这个时间就会被自动删除"></a>指定key-value存在的时间，过了这个时间就会被自动删除</h4><p>存储resource:lock</p>
-<blockquote>
-<p>set resource:lock “Redis Demo”</p>
-</blockquote>
-<p>设置resource:lock过期时间</p>
-<blockquote>
-<p>expire resource:lock 120</p>
-</blockquote>
-<p>查看resource:lock剩余过期时间</p>
-<blockquote>
-<p>ttl resource:lock</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">这里有个小知识点：</span><br><span class="line"></span><br><span class="line">ttl查看一个不存在key会返回-2</span><br><span class="line"></span><br><span class="line">&gt; ttl aa</span><br><span class="line">(integer) -2</span><br><span class="line"></span><br><span class="line">ttl查看一个没有设置过期时间的key会返回-1</span><br><span class="line"></span><br><span class="line">&gt; ttl server:name</span><br><span class="line">(integer) -1</span><br></pre></td></tr></table></figure>
-<h4 id="复杂数据类型"><a href="#复杂数据类型" class="headerlink" title="复杂数据类型"></a>复杂数据类型</h4><h4 id="List"><a href="#List" class="headerlink" title="List"></a>List</h4><blockquote>
-<p>Redis也提供了几种复杂的数据类型，首先要提的就是list，一个有序列表。关于list需要记住几个重要的命令：</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">RPUSH, LPUSH, LLEN, LRANGE, LPOP, and RPOP.</span><br></pre></td></tr></table></figure>
-<h6 id="rpush-向后push"><a href="#rpush-向后push" class="headerlink" title="rpush 向后push"></a>rpush 向后push</h6><p>向friends列表后面添加数据，如果friends不存在会创建</p>
-<blockquote>
-<p>rpush friends “Alice”</p>
-</blockquote>
-<h6 id="lpush-向前push"><a href="#lpush-向前push" class="headerlink" title="lpush 向前push"></a>lpush 向前push</h6><p>向friends列表前面添加数据</p>
-<blockquote>
-<p>lpush friends “Sam”</p>
-</blockquote>
-<h6 id="lpop-向前pop"><a href="#lpop-向前pop" class="headerlink" title="lpop 向前pop"></a>lpop 向前pop</h6><p>从列表前面取出数据，注意pop动作是取出，也就是说列表中的数据也会被移除</p>
-<blockquote>
-<p>lpop friends</p>
-</blockquote>
-<h6 id="rpop-向后pop"><a href="#rpop-向后pop" class="headerlink" title="rpop 向后pop"></a>rpop 向后pop</h6><p>从列表后面取出数据</p>
-<blockquote>
-<p>rpop friends</p>
-</blockquote>
-<h6 id="llen-取列表长度"><a href="#llen-取列表长度" class="headerlink" title="llen 取列表长度"></a>llen 取列表长度</h6><blockquote>
-<p>llen friends</p>
-</blockquote>
-<h6 id="lrange-取列表的子集"><a href="#lrange-取列表的子集" class="headerlink" title="lrange 取列表的子集"></a>lrange 取列表的子集</h6><blockquote>
-<p>lrange friends 0 1</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">如果lrange friends 0 -1像这样，第二个参数为-1，则表示从0取到列表的最后一个元素</span><br></pre></td></tr></table></figure>
-<h4 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h4><blockquote>
-<p>接下来我们要介绍的数据类型是Set。Set的结构与List类似，但是它不能排序并且不能有相同的值，关于Set的重要的命令有：</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SADD, SREM, SISMEMBER, SMEMBERS and SUNION</span><br></pre></td></tr></table></figure>
-<h6 id="sadd-新增元素，如果set集合不存在则会创建"><a href="#sadd-新增元素，如果set集合不存在则会创建" class="headerlink" title="sadd 新增元素，如果set集合不存在则会创建"></a>sadd 新增元素，如果set集合不存在则会创建</h6><blockquote>
-<p>sadd superpowers “hello”</p>
-</blockquote>
-<blockquote>
-<p>sadd superpowers “world”</p>
-</blockquote>
-<h6 id="srem-删除元素"><a href="#srem-删除元素" class="headerlink" title="srem 删除元素"></a>srem 删除元素</h6><blockquote>
-<p>srem superpowers “hello”</p>
-</blockquote>
-<h6 id="sismember-测试指定元素是否存在"><a href="#sismember-测试指定元素是否存在" class="headerlink" title="sismember 测试指定元素是否存在"></a>sismember 测试指定元素是否存在</h6><p>不存在返回0</p>
-<blockquote>
-<p>sisimember superpowers “hello”</p>
-</blockquote>
-<p>存在返回1</p>
-<blockquote>
-<p>sismember superpowers “world”</p>
-</blockquote>
-<h6 id="smembers-查看set中的所有元素"><a href="#smembers-查看set中的所有元素" class="headerlink" title="smembers 查看set中的所有元素"></a>smembers 查看set中的所有元素</h6><blockquote>
-<p>smembers superpowers</p>
-</blockquote>
-<h6 id="sunion-联合两个或多个set并查看合成的值"><a href="#sunion-联合两个或多个set并查看合成的值" class="headerlink" title="sunion 联合两个或多个set并查看合成的值"></a>sunion 联合两个或多个set并查看合成的值</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sadd birdpowers &quot;nihao&quot;</span><br><span class="line"></span><br><span class="line">sunion superpowers birdpowers</span><br></pre></td></tr></table></figure>
-<h4 id="Sorted-Sets"><a href="#Sorted-Sets" class="headerlink" title="Sorted Sets"></a>Sorted Sets</h4><blockquote>
-<p>也许你认为set已经够用了很方便了，但是老铁，它不能排序呀，不能排序就少了很多功能了有木有。所以从Redis1.2开始引入了sorted sets。Sorted Sets可以理解为有规律的set，但是sorted sets中的每个值都有一个关联的数值。这个数值用来对set进行排序。</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">就像下面这样，每个值都要指定一个score以便排序</span><br><span class="line"></span><br><span class="line">    ZADD hackers 1940 &quot;Alan Kay&quot;</span><br><span class="line">    ZADD hackers 1906 &quot;Grace Hopper&quot;</span><br><span class="line">    ZADD hackers 1953 &quot;Richard Stallman&quot;</span><br><span class="line">    ZADD hackers 1965 &quot;Yukihiro Matsumoto&quot;</span><br><span class="line">    ZADD hackers 1916 &quot;Claude Shannon&quot;</span><br><span class="line">    ZADD hackers 1969 &quot;Linus Torvalds&quot;</span><br><span class="line">    ZADD hackers 1957 &quot;Sophie Wilson&quot;</span><br><span class="line">    ZADD hackers 1912 &quot;Alan Turing&quot;</span><br></pre></td></tr></table></figure>
-<h4 id="Hashes"><a href="#Hashes" class="headerlink" title="Hashes"></a>Hashes</h4><blockquote>
-<p>简单的字符串、Set或者Sorted Sets已经可以完成大部分任务了。Redis还能提供一种类型：Hashes。</p>
-</blockquote>
-<blockquote>
-<p>Hashes are maps between string fields and string values, so they are the perfect data type to represent objects (eg: A User with a number of fields like name, surname, age, and so forth):（直接看官方解释吧，懒得翻译了，大意就是用来存储诸如用户实体这样的对象的）</p>
-</blockquote>
-<h4 id="怎么用呢？"><a href="#怎么用呢？" class="headerlink" title="怎么用呢？"></a>怎么用呢？</h4><h6 id="hset-添加元素"><a href="#hset-添加元素" class="headerlink" title="hset 添加元素"></a>hset 添加元素</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">使用方法如下：</span><br><span class="line"></span><br><span class="line">    HSET user:1000 name &quot;John Smith&quot;</span><br><span class="line">    HSET user:1000 email &quot;john.smith@example.com&quot;</span><br><span class="line">    HSET user:1000 password &quot;s3cret&quot;</span><br></pre></td></tr></table></figure>
-<h6 id="hgetall-查看所有元素"><a href="#hgetall-查看所有元素" class="headerlink" title="hgetall 查看所有元素"></a>hgetall 查看所有元素</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">To get back the saved data use HGETALL:</span><br><span class="line"></span><br><span class="line">    HGETALL user:1000</span><br></pre></td></tr></table></figure>
-<h6 id="hget-查看指定元素"><a href="#hget-查看指定元素" class="headerlink" title="hget 查看指定元素"></a>hget 查看指定元素</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">If you only need a single field value that is possible as well:</span><br><span class="line"></span><br><span class="line">    HGET user:1001 name =&gt; &quot;Mary Jones&quot;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>hash中还有许多命令可以帮助我们做原子操作：</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">设置值：</span><br><span class="line">HSET user:1000 visits 10</span><br><span class="line"></span><br><span class="line">自增（原子操作）：</span><br><span class="line">HINCRBY user:1000 visits 1 =&gt; 11</span><br><span class="line">HINCRBY user:1000 visits 10 =&gt; 21</span><br><span class="line"></span><br><span class="line">删除：</span><br><span class="line">HDEL user:1000 visits</span><br><span class="line"></span><br><span class="line">如果没有值则会创建一个值：</span><br><span class="line">HINCRBY user:1000 visits 1 =&gt; 1</span><br></pre></td></tr></table></figure>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><blockquote>
-<p>以上只是跟着redis官网给的导学内容学习到的，关于redis的更多内容还需要在工作中不断地去探索。。。</p>
-</blockquote>
-<p><a href="http://www.redis.cn/" target="_blank" rel="noopener">redis中文网</a></p>
+<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>第一个问题是我的maven项目用mvn命令启动，刚开始使用mvn clean spring-boot:run启动一点问题都没有，后来想测试一下用内嵌的tomcat启动mvn clean tomcat7:run，编译正常通过BUILD SUCCESS，但是项目不运行。。。很郁闷。</p>
+<p><img src="\uploads\activiti\errors\2018-12-26_232359.png" alt=""></p>
+<p>然后百度了很久，尝试了各种方式终于实出来了。需要在tomcat的maven插件中增加<ignorepackaging>true</ignorepackaging>，那么为什么呢？</p>
+<p>因为tomcat启动默认会去找打包好的war包来启动，而我的项目还没有打成war包，所以添加<ignorepackaging>让tomcat启动过程中忽略war包就可以了。</ignorepackaging></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.tomcat.maven<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>tomcat7-maven-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">ignorePackaging</span>&gt;</span>true<span class="tag">&lt;/<span class="name">ignorePackaging</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">mainClass</span>&gt;</span>com.imooc.workflow.WorkflowApplication<span class="tag">&lt;/<span class="name">mainClass</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">path</span>&gt;</span>/wf<span class="tag">&lt;/<span class="name">path</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">port</span>&gt;</span>8080<span class="tag">&lt;/<span class="name">port</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">protocol</span>&gt;</span>org.apache.coyote.http11.Http11NioProtocol<span class="tag">&lt;/<span class="name">protocol</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">systemProperties</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">com.sun.management.jmxremote.port</span>&gt;</span>4000<span class="tag">&lt;/<span class="name">com.sun.management.jmxremote.port</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;/<span class="name">systemProperties</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>第二个问题是liquibase引起的一系列问题。因为我的项目是springboot的，然后呢要使用activiti需要生成28张activiti这个框架要用到的表，我就在application.yml文件里面配置了<strong>generate-ddl: true</strong>用于项目启动的时候自动生成表，同时呢因为项目的UI模块使用的activiti6.0源码里面的子模块activiti-ui修改而成的依赖包，这个UI模块自己也会生成几张表并且是用到了liquibase的。</p>
+<p>我就在application.yml文件里面开启了liquibase相关配置并关闭了自动生成表的配置。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">jpa:</span></span><br><span class="line"><span class="attr">    properties:</span></span><br><span class="line"><span class="attr">      hibernate:</span></span><br><span class="line"><span class="attr">        cache:</span></span><br><span class="line"><span class="attr">          use_second_level_cache:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">    open-in-view:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    generate-ddl:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">  liquibase:</span></span><br><span class="line"><span class="attr">      enabled:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">      change-log:</span> <span class="attr">classpath:META-INF/liquibase/activiti-app-db-changelog.xml</span></span><br></pre></td></tr></table></figure>
+<p>删除之前activiti-ui模块生成的几张表，重新启动项目。这个时候可能会报错，我当时忘截图了可以大致说一下。liquibase的change-log文件里面会有建表语句，其中像ACT_WO_RELATED_CONTENT等几张表的某些字段的类型被设置为timestamp(6)，然后在建表的时候就会报错。</p>
+<p>我把建表语句直接拿到navicat执行也是报错，指向了类型为timestamp(6)的字段，于是我把后面的精度6去掉，就成功了。然后查询资料得知，mysql版本 &lt; 5.6，不支持毫秒精度设置。。。呵呵。</p>
+<p><img src="\uploads\activiti\errors\20180529164221448.png" alt=""></p>
+<p>好，问题基本解决，说到问题，我就想起了西游记中师徒四人遇到的种种困难，明年年初，中美合拍的西游记即将正式开机，我继续扮演美猴王孙悟空，我会用美猴王艺术形象努力创造一个正能量的形象，文体两开花，弘扬中华文化，希望大家多多关注。</p>
 
       
     </div>
@@ -629,7 +536,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Redis/" rel="tag"><i class="fa fa-tag"></i> Redis</a>
+            <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i> Java</a>
+          
+            <a href="/tags/activiti/" rel="tag"><i class="fa fa-tag"></i> activiti</a>
           
         </div>
       
@@ -642,8 +551,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/22/整理上学时的笔记/" rel="next" title="整理上学时的笔记">
-                <i class="fa fa-chevron-left"></i> 整理上学时的笔记
+              <a href="/2018/12/22/SpringBoot1-2-6整合Activiti6-0遇到的bug/" rel="next" title="SpringBoot1.2.6整合Activiti6.0遇到的bug">
+                <i class="fa fa-chevron-left"></i> SpringBoot1.2.6整合Activiti6.0遇到的bug
               </a>
             
           </div>
@@ -651,10 +560,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/08/24/虚拟机安装Redis遇到的问题/" rel="prev" title="虚拟机安装Redis遇到的问题">
-                虚拟机安装Redis遇到的问题 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -821,7 +726,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基础命令"><span class="nav-number">1.</span> <span class="nav-text">基础命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#存储key-value"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">存储key-value</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#根据key取出value"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">根据key取出value</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#根据key删除key-value"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">根据key删除key-value</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#根据key对整型value做自增自减"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">根据key对整型value做自增自减</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#指定key-value存在的时间，过了这个时间就会被自动删除"><span class="nav-number">1.0.0.5.</span> <span class="nav-text">指定key-value存在的时间，过了这个时间就会被自动删除</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#复杂数据类型"><span class="nav-number">1.0.0.6.</span> <span class="nav-text">复杂数据类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#List"><span class="nav-number">1.0.0.7.</span> <span class="nav-text">List</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#rpush-向后push"><span class="nav-number">1.0.0.7.0.1.</span> <span class="nav-text">rpush 向后push</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#lpush-向前push"><span class="nav-number">1.0.0.7.0.2.</span> <span class="nav-text">lpush 向前push</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#lpop-向前pop"><span class="nav-number">1.0.0.7.0.3.</span> <span class="nav-text">lpop 向前pop</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#rpop-向后pop"><span class="nav-number">1.0.0.7.0.4.</span> <span class="nav-text">rpop 向后pop</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#llen-取列表长度"><span class="nav-number">1.0.0.7.0.5.</span> <span class="nav-text">llen 取列表长度</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#lrange-取列表的子集"><span class="nav-number">1.0.0.7.0.6.</span> <span class="nav-text">lrange 取列表的子集</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Set"><span class="nav-number">1.0.0.8.</span> <span class="nav-text">Set</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#sadd-新增元素，如果set集合不存在则会创建"><span class="nav-number">1.0.0.8.0.1.</span> <span class="nav-text">sadd 新增元素，如果set集合不存在则会创建</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#srem-删除元素"><span class="nav-number">1.0.0.8.0.2.</span> <span class="nav-text">srem 删除元素</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#sismember-测试指定元素是否存在"><span class="nav-number">1.0.0.8.0.3.</span> <span class="nav-text">sismember 测试指定元素是否存在</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#smembers-查看set中的所有元素"><span class="nav-number">1.0.0.8.0.4.</span> <span class="nav-text">smembers 查看set中的所有元素</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#sunion-联合两个或多个set并查看合成的值"><span class="nav-number">1.0.0.8.0.5.</span> <span class="nav-text">sunion 联合两个或多个set并查看合成的值</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Sorted-Sets"><span class="nav-number">1.0.0.9.</span> <span class="nav-text">Sorted Sets</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Hashes"><span class="nav-number">1.0.0.10.</span> <span class="nav-text">Hashes</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#怎么用呢？"><span class="nav-number">1.0.0.11.</span> <span class="nav-text">怎么用呢？</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#hset-添加元素"><span class="nav-number">1.0.0.11.0.1.</span> <span class="nav-text">hset 添加元素</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#hgetall-查看所有元素"><span class="nav-number">1.0.0.11.0.2.</span> <span class="nav-text">hgetall 查看所有元素</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#hget-查看指定元素"><span class="nav-number">1.0.0.11.0.3.</span> <span class="nav-text">hget 查看指定元素</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">2.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#问题"><span class="nav-number">2.</span> <span class="nav-text">问题</span></a></li></ol></div>
             
 
           </div>
@@ -1036,7 +941,7 @@
       <script type="text/javascript">
       function renderGitment(){
         var gitment = new Gitmint({ 
-			id: '1535016258000',
+			id: '1545836387000',
             owner: 'zhangxingr',
             repo: 'zhangxingr.github.io',
             
