@@ -390,16 +390,6 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/01/14/关于链表的一些操作/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/01/14/关于链表的一些操作/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
           
 
           
@@ -943,9 +933,12 @@
 
 <!-- LOCAL: You can save these files to your site and update links -->
     
-        
-        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
-        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+        <!--
+        <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+        <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script> -->
+		
+		<link rel="stylesheet" href="https://www.wenjunjiang.win/css/gitment.css">
+		<script src="https://www.wenjunjiang.win/js/gitment.js"></script>
     
 <!-- END LOCAL -->
 
@@ -954,12 +947,10 @@
     
       <script type="text/javascript">
       function renderGitment(){
-        var gitment = new Gitmint({ 
+        var gitment = new Gitment({ 
 			id: '1547475938000',
             owner: 'zhangxingr',
             repo: 'zhangxingr.github.io',
-            
-            lang: "zh-Hans" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
             
             oauth: {
             
